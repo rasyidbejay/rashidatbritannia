@@ -12,17 +12,13 @@
   <script defer src="js/main.js"></script>
 </head>
 <body>
-  <!-- Theme Toggle -->
-  <button id="theme-toggle" aria-label="Switch theme">
-    <svg id="theme-icon" width="26" height="26" viewBox="0 0 26 26" fill="none"></svg>
-  </button>
-
   <!-- Header -->
   <header class="glass-header">
     <nav class="nav-container" aria-label="Main navigation">
-      <a class="nav-logo" href="index.html">
+      <a class="nav-logo" href="index.html" title="Britannia Language Centre">
         <span class="logo-icon"></span>
         <span class="logo-text gradient-text">Britannia</span>
+        <span style="font-size:1.3em; margin-left:5px;">🇬🇧</span>
       </a>
       <ul class="nav-links">
         <li><a href="about.html">About</a></li>
@@ -31,11 +27,17 @@
         <li><a href="success-stories.html">Success Stories</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <!-- Theme Toggle (Apple-like inside nav) -->
+      <button id="theme-toggle" aria-label="Switch theme" title="Toggle dark/light mode">
+        <svg id="theme-icon" width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <!-- Apple-like sun and moon; filled with JS -->
+        </svg>
+      </button>
     </nav>
   </header>
 
   <!-- Main Content -->
-  <main class="main-content" role="main">
+  <main class="main-content">
     <!-- Hero Section -->
     <section class="hero glass-card">
       <div class="hero-content">
@@ -46,11 +48,20 @@
           </h1>
           <p>
             Empowering learners with premium English education in Malaysia.<br>
-            Experience British quality, personal touch, and proven results.
+            <span class="subtle-highlight">Experience British quality, personal touch, and proven results.</span>
           </p>
           <div class="cta-group">
-            <a href="courses.html" class="btn">View Courses</a>
-            <a href="contact.html" class="btn">Contact Us</a>
+            <a href="courses.html" class="btn btn-blue">View Courses</a>
+            <a href="contact.html" class="btn btn-red">Contact Us</a>
+          </div>
+          <div class="cta-extra">
+            <a href="assessment.html" class="cta-pill">
+              <span class="pill-icon">📝</span> Start Your Free English Assessment
+            </a>
+            <div class="trust-badge">
+              <svg width="18" height="18" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" stroke="#6ccff6" stroke-width="2"/><path d="M6.5 11.5L9 14l4.5-5" stroke="#6ccff6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>1,000+ Malaysians improved their English with us</span>
+            </div>
           </div>
         </div>
         <div class="hero-profile">
@@ -62,6 +73,12 @@
             Marketing Executive
           </div>
         </div>
+      </div>
+      <div class="hero-invite">
+        <span class="invite-emoji">✨</span>
+        <span>
+          <strong>“My mission is simple:</strong> to help you unlock your full potential in English, and open doors to new opportunities. Start today—let’s make your English journey extraordinary!”
+        </span>
       </div>
     </section>
   </main>
