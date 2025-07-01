@@ -1,72 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <title>About Me | Rashid - Britannia Language Centre</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Courses | Britannia Language Centre</title>
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script defer src="js/main.js"></script>
 </head>
-<body class="light">
-  <!-- Navigation (reuse same as index.html) -->
-  <nav class="glass-nav">
-    <div class="nav-logo">
-      <img src="assets/img/britannia-logo.png" alt="Britannia Logo" height="38">
+<body>
+  <button id="theme-toggle" aria-label="Switch theme">
+    <svg id="theme-icon" width="26" height="26"></svg>
+  </button>
+  <header class="glass-header">
+    <nav class="nav-container">
+      <a class="nav-logo" href="index.html"><span class="logo-icon"></span><span class="logo-text gradient-text">Britannia</span></a>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="why-english.html">Why English</a></li>
+        <li><a href="courses.html" class="active">Courses</a></li>
+        <li><a href="success-stories.html">Success</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="section glass-card">
+    <h2>Our <span class="gradient-text">Courses</span></h2>
+    <div class="course-cards">
+      <div class="course-card">
+        <h3>General English</h3>
+        <p>Build solid foundations in all key skills: speaking, listening, reading, and writing. Practical, fun, and confidence-boosting for all levels.</p>
+      </div>
+      <div class="course-card">
+        <h3>IELTS Preparation</h3>
+        <p>Expert teaching and real practice for exam success. Personalised strategies and feedback from British-trained instructors.</p>
+      </div>
+      <div class="course-card">
+        <h3>Business English</h3>
+        <p>Upgrade your workplace communication for presentations, emails, meetings, and more. Ideal for professionals and jobseekers.</p>
+      </div>
+      <div class="course-card">
+        <h3>Young Learners</h3>
+        <p>Friendly, engaging classes for children and teens, designed to improve school performance and future readiness.</p>
+      </div>
+      <div class="course-card">
+        <h3>Conversation Club</h3>
+        <p>Fun, informal sessions for practising real-life English with native speakers and classmates. Open to all students!</p>
+      </div>
     </div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About Me</a></li>
-      <li><a href="courses.html">Courses</a></li>
-      <li><a href="why-english.html">Why English?</a></li>
-      <li><a href="success-stories.html">Success Stories</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="faq.html">FAQs</a></li>
-    </ul>
-    <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
-  </nav>
-
-  <main>
-    <!-- Profile Card -->
-    <section class="profile glass-card">
-      <div class="profile-photo">
-        <img src="assets/img/rashid-profile.jpg" alt="Rashid Photo">
-      </div>
-      <div class="profile-info">
-        <h1>About Me</h1>
-        <h2>Mohammad Rashid</h2>
-        <h3>Marketing Executive, Britannia Language Centre</h3>
-        <p>
-          My journey in education began with a passion for helping others reach their full potential. As Marketing Executive at Britannia Language Centre, I have the privilege of connecting students from all backgrounds with life-changing English language programmes.
-        </p>
-      </div>
-    </section>
-
-    <!-- Why I Help Students -->
-    <section class="mission glass-card">
-      <h2>Why I Help Students</h2>
-      <p>
-        Learning English can transform lives. I know the challenges students face, and I’m dedicated to making the process supportive, enjoyable, and truly rewarding. At Britannia, every student matters—your success is our success.
-      </p>
-    </section>
-
-    <!-- The Britannia Team -->
-    <section class="team glass-card">
-      <h2>The Britannia Difference</h2>
-      <p>
-        Our team combines expert teachers, caring staff, and a global community of learners. We go beyond lessons to offer real guidance, encouragement, and support—helping you become confident in English and in life.
-      </p>
-    </section>
-  </main>
-
-  <footer class="glass-nav">
-    <div>&copy; 2025 Rashid at Britannia Language Centre. All rights reserved.</div>
+  </section>
+  <footer class="glass-footer">
+    <div class="footer-content">
+      <a class="footer-logo" href="index.html"><span class="logo-icon"></span><span class="logo-text gradient-text">Britannia</span></a>
+      <nav class="footer-nav">
+        <a href="about.html">About</a>
+        <a href="why-english.html">Why English</a>
+        <a href="courses.html" class="active">Courses</a>
+        <a href="success-stories.html">Success</a>
+        <a href="blog.html">Blog</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-copy">© 2025 Rashid at Britannia Language Centre</div>
+    </div>
   </footer>
-
-  <script src="js/main.js"></script>
 </body>
 </html>
