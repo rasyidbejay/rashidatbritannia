@@ -1,90 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <title>FAQs | Rashid - Britannia Language Centre</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQ | Britannia Language Centre</title>
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script defer src="js/main.js"></script>
 </head>
-<body class="light">
-  <!-- Navigation -->
-  <nav class="glass-nav">
-    <div class="nav-logo">
-      <img src="assets/img/britannia-logo.png" alt="Britannia Logo" height="38">
+<body>
+  <button id="theme-toggle" aria-label="Switch theme">
+    <svg id="theme-icon" width="26" height="26"></svg>
+  </button>
+  <header class="glass-header">
+    <nav class="nav-container">
+      <a class="nav-logo" href="index.html"><span class="logo-icon"></span><span class="logo-text gradient-text">Britannia</span></a>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="why-english.html">Why English</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="success-stories.html">Success</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="faq.html" class="active">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="section glass-card" style="max-width:780px;">
+    <h2><span class="gradient-text">Frequently Asked Questions</span></h2>
+    <div style="margin-top:28px;">
+      <div class="course-card" style="margin-bottom:14px;">
+        <strong>Who are your teachers?</strong>
+        <div style="margin-top:7px;">All our teachers are British-trained and qualified, with experience teaching students from all over the world.</div>
+      </div>
+      <div class="course-card" style="margin-bottom:14px;">
+        <strong>What’s the class size?</strong>
+        <div style="margin-top:7px;">Classes are kept small—usually 8-12 students—to ensure plenty of speaking practice and personal support.</div>
+      </div>
+      <div class="course-card" style="margin-bottom:14px;">
+        <strong>Can I try a class first?</strong>
+        <div style="margin-top:7px;">Yes, we offer a free trial lesson or assessment for most courses. Contact us to book yours!</div>
+      </div>
+      <div class="course-card" style="margin-bottom:14px;">
+        <strong>How do I register?</strong>
+        <div style="margin-top:7px;">Simply fill out our <a href="contact.html">contact form</a> and we’ll guide you through the process.</div>
+      </div>
+      <div class="course-card" style="margin-bottom:14px;">
+        <strong>Are your courses suitable for beginners?</strong>
+        <div style="margin-top:7px;">Absolutely! We have levels for complete beginners up to advanced learners.</div>
+      </div>
+      <div class="course-card" style="margin-bottom:14px;">
+        <strong>Where are you located?</strong>
+        <div style="margin-top:7px;">Our centre is in Kuala Lumpur, Malaysia. We also offer online classes worldwide.</div>
+      </div>
     </div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Me</a></li>
-      <li><a href="courses.html">Courses</a></li>
-      <li><a href="why-english.html">Why English?</a></li>
-      <li><a href="success-stories.html">Success Stories</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="faq.html" class="active">FAQs</a></li>
-    </ul>
-    <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
-  </nav>
-
-  <main>
-    <!-- FAQ Header -->
-    <section class="faq-header glass-card">
-      <h1>Frequently Asked Questions</h1>
-      <p>Find answers to common questions about our courses, fees, registration, and more.</p>
-    </section>
-
-    <!-- FAQ List -->
-    <section class="faq-list">
-      <div class="faq-item glass-card">
-        <h2>What courses does Britannia offer?</h2>
-        <p>
-          We offer General English, IELTS Preparation, Business English, and Young Learner programmes. Check our <a href="courses.html">Courses</a> page for details.
-        </p>
-      </div>
-      <div class="faq-item glass-card">
-        <h2>How do I register for a course?</h2>
-        <p>
-          Simply <a href="contact.html">contact us</a> or fill out our online enquiry form. Our team will guide you through every step.
-        </p>
-      </div>
-      <div class="faq-item glass-card">
-        <h2>What are the course fees?</h2>
-        <p>
-          Fees depend on the course type and duration. Contact us for the latest fee schedule and promotions.
-        </p>
-      </div>
-      <div class="faq-item glass-card">
-        <h2>Do you offer online or in-person classes?</h2>
-        <p>
-          Yes, we provide both options to fit your needs and schedule.
-        </p>
-      </div>
-      <div class="faq-item glass-card">
-        <h2>Can I join if I am a complete beginner?</h2>
-        <p>
-          Absolutely! Our courses are designed for all levels, from beginner to advanced.
-        </p>
-      </div>
-      <div class="faq-item glass-card">
-        <h2>What is the class schedule?</h2>
-        <p>
-          We offer flexible schedules including weekdays, weekends, and evening classes. Reach out for the current timetable.
-        </p>
-      </div>
-      <div class="faq-item glass-card">
-        <h2>Will I get a certificate after completing a course?</h2>
-        <p>
-          Yes, you will receive an official certificate from Britannia Language Centre upon successful completion.
-        </p>
-      </div>
-      <!-- Add more FAQ items as needed -->
-    </section>
-  </main>
-
-  <footer class="glass-nav">
-    <div>&copy; 2025 Rashid at Britannia Language Centre. All rights reserved.</div>
+  </section>
+  <footer class="glass-footer">
+    <div class="footer-content">
+      <a class="footer-logo" href="index.html"><span class="logo-icon"></span><span class="logo-text gradient-text">Britannia</span></a>
+      <nav class="footer-nav">
+        <a href="about.html">About</a>
+        <a href="why-english.html">Why English</a>
+        <a href="courses.html">Courses</a>
+        <a href="success-stories.html">Success</a>
+        <a href="blog.html">Blog</a>
+        <a href="faq.html" class="active">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-copy">© 2025 Rashid at Britannia Language Centre</div>
+    </div>
   </footer>
-
-  <script src="js/main.js"></script>
 </body>
 </html>
-
