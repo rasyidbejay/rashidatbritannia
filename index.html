@@ -13,173 +13,71 @@
 <body>
   <!-- Theme Toggle -->
   <button id="theme-toggle" aria-label="Switch theme">
-    <svg id="theme-icon" width="26" height="26" viewBox="0 0 26 26" fill="none">
-      <!-- Sun & moon (dynamic in JS) -->
-    </svg>
+    <svg id="theme-icon" width="26" height="26" viewBox="0 0 26 26" fill="none"></svg>
   </button>
 
   <!-- Header -->
   <header class="glass-header">
     <nav class="nav-container">
-      <a class="nav-logo" href="#">
+      <a class="nav-logo" href="index.html">
         <span class="logo-icon"></span>
         <span class="logo-text gradient-text">Britannia</span>
       </a>
       <ul class="nav-links">
-        <li><a href="#about" class="active">About</a></li>
-        <li><a href="#why">Why Us</a></li>
-        <li><a href="#courses">Courses</a></li>
-        <li><a href="#success">Success Stories</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="why-english.html">Why Us</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="success-stories.html">Success Stories</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero glass-card">
-    <div class="hero-content">
-      <div class="hero-text">
-        <h1>
-          Welcome to <span class="gradient-text">Britannia</span><br>
-          Language Centre
-        </h1>
-        <p>Empowering learners with premium English education in Malaysia.<br>
-          Experience British quality, personal touch, and proven results.
-        </p>
-        <div class="cta-group">
-          <a href="#courses" class="btn btn-blue">View Courses</a>
-          <a href="#contact" class="btn btn-red">Contact Us</a>
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Hero Section -->
+    <section class="hero glass-card">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>
+            Welcome to <span class="gradient-text">Britannia</span><br>
+            Language Centre
+          </h1>
+          <p>
+            Empowering learners with premium English education in Malaysia.<br>
+            Experience British quality, personal touch, and proven results.
+          </p>
+          <div class="cta-group">
+            <a href="courses.html" class="btn">View Courses</a>
+            <a href="contact.html" class="btn">Contact Us</a>
+          </div>
+        </div>
+        <div class="hero-profile">
+          <div class="profile-glass">
+            <img src="assets/rashid-profile.jpg" alt="Rashid - Marketing Executive" class="profile-pic">
+          </div>
+          <div class="profile-name">
+            <strong>Rashid Abdullah</strong><br>
+            Marketing Executive
+          </div>
         </div>
       </div>
-      <div class="hero-profile">
-        <div class="profile-glass">
-          <img src="assets/rashid-profile.jpg" alt="Rashid - Marketing Executive" class="profile-pic">
-        </div>
-        <div class="profile-name">
-          <strong>Rashid Abdullah</strong><br>
-          Marketing Executive
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="section glass-card">
-    <h2>About <span class="gradient-text">Rashid</span></h2>
-    <p>
-      I’m Rashid, Marketing Executive at Britannia Language Centre. With a passion for education and innovation, I help students achieve real progress and confidence in English, whether for university, work, or life abroad. At Britannia, you’ll find a welcoming, results-focused environment, top British teachers, and support that goes the extra mile.
-    </p>
-  </section>
-
-  <!-- Why Britannia -->
-  <section id="why" class="section glass-card">
-    <h2>Why Choose <span class="gradient-text">Britannia?</span></h2>
-    <ul class="why-list">
-      <li>
-        <span class="icon-blue">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#6ccff6" stroke-width="2"/><path d="M8 12.5L11 15.5L16 10.5" stroke="#6ccff6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </span>
-        Real British-qualified teachers
-      </li>
-      <li>
-        <span class="icon-blue">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#6ccff6" stroke-width="2"/><path d="M8 12.5L11 15.5L16 10.5" stroke="#6ccff6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </span>
-        Small, interactive classes
-      </li>
-      <li>
-        <span class="icon-blue">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#6ccff6" stroke-width="2"/><path d="M8 12.5L11 15.5L16 10.5" stroke="#6ccff6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </span>
-        Proven results & student success
-      </li>
-      <li>
-        <span class="icon-blue">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#6ccff6" stroke-width="2"/><path d="M8 12.5L11 15.5L16 10.5" stroke="#6ccff6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </span>
-        Modern, premium learning environment
-      </li>
-    </ul>
-  </section>
-
-  <!-- Courses Section -->
-  <section id="courses" class="section glass-card">
-    <h2>Our <span class="gradient-text">Courses</span></h2>
-    <div class="course-cards">
-      <div class="course-card">
-        <h3>General English</h3>
-        <p>Master everyday English skills, build confidence in speaking, listening, reading and writing.</p>
-      </div>
-      <div class="course-card">
-        <h3>IELTS Preparation</h3>
-        <p>Expert guidance and practice to achieve your target IELTS band for university or migration.</p>
-      </div>
-      <div class="course-card">
-        <h3>Business English</h3>
-        <p>Communicate with clarity and professionalism for your career growth and workplace success.</p>
-      </div>
-      <div class="course-card">
-        <h3>Young Learners</h3>
-        <p>Fun, engaging classes for children and teens, helping them shine at school and beyond.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Success Stories Section -->
-  <section id="success" class="section glass-card">
-    <h2>Success <span class="gradient-text">Stories</span></h2>
-    <div class="testimonials">
-      <div class="testimonial-card">
-        <p>“Britannia helped me achieve Band 7.5 in IELTS. The classes were supportive and truly British in style!”</p>
-        <span class="testimonial-author">— Maryam, University Student</span>
-      </div>
-      <div class="testimonial-card">
-        <p>“My son’s English improved so much. Thank you, Rashid and the team, for your dedication!”</p>
-        <span class="testimonial-author">— Mrs Lim, Parent</span>
-      </div>
-      <div class="testimonial-card">
-        <p>“After studying at Britannia, I got my dream job. The Business English course was practical and inspiring.”</p>
-        <span class="testimonial-author">— Ahmad, Working Professional</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="section glass-card">
-    <h2>Contact <span class="gradient-text">Us</span></h2>
-    <form class="contact-form" autocomplete="off">
-      <div class="form-row">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-      </div>
-      <textarea rows="3" placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn btn-blue">Send Message</button>
-    </form>
-    <div class="contact-details">
-      <span class="icon-red">
-        <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M2.5 5C2.5 3.61929 3.61929 2.5 5 2.5H15C16.3807 2.5 17.5 3.61929 17.5 5V15C17.5 16.3807 16.3807 17.5 15 17.5H5C3.61929 17.5 2.5 16.3807 2.5 15V5Z" stroke="#ec1a2e" stroke-width="1.5"/><circle cx="10" cy="9" r="2" stroke="#ec1a2e" stroke-width="1.5"/><path d="M10 13V14" stroke="#ec1a2e" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </span>
-      <span>info@britannialanguage.my</span>
-      <span class="icon-red">
-        <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M3 5.5V5C3 3.34315 4.34315 2 6 2H14C15.6569 2 17 3.34315 17 5V15C17 16.6569 15.6569 18 14 18H6C4.34315 18 3 16.6569 3 15V14.5" stroke="#ec1a2e" stroke-width="1.5"/><path d="M7 10H13" stroke="#ec1a2e" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </span>
-      <span>+60 12 345 6789</span>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer class="glass-footer">
     <div class="footer-content">
-      <a class="footer-logo" href="#">
+      <a class="footer-logo" href="index.html">
         <span class="logo-icon"></span>
         <span class="logo-text gradient-text">Britannia</span>
       </a>
       <nav class="footer-nav">
-        <a href="#about">About</a>
-        <a href="#why">Why Us</a>
-        <a href="#courses">Courses</a>
-        <a href="#success">Success</a>
-        <a href="#contact">Contact</a>
+        <a href="about.html">About</a>
+        <a href="why-english.html">Why Us</a>
+        <a href="courses.html">Courses</a>
+        <a href="success-stories.html">Success</a>
+        <a href="contact.html">Contact</a>
       </nav>
       <div class="footer-social">
         <a href="#" aria-label="Instagram" class="icon-blue">
