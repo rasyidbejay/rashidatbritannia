@@ -1,97 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <title>Contact | Rashid - Britannia Language Centre</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Britannia Language Centre</title>
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script defer src="js/main.js"></script>
 </head>
-<body class="light">
-  <!-- Navigation -->
-  <nav class="glass-nav">
-    <div class="nav-logo">
-      <img src="assets/img/britannia-logo.png" alt="Britannia Logo" height="38">
-    </div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Me</a></li>
-      <li><a href="courses.html">Courses</a></li>
-      <li><a href="why-english.html">Why English?</a></li>
-      <li><a href="success-stories.html">Success Stories</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
-      <li><a href="faq.html">FAQs</a></li>
-    </ul>
-    <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
-  </nav>
-
-  <main>
-    <!-- Contact Header -->
-    <section class="contact-header glass-card">
-      <h1>Contact Me</h1>
-      <p>Book your free consultation, ask a question, or say hello. I’m here to help!</p>
-    </section>
-
-    <!-- Contact Form -->
-    <section class="contact-form glass-card">
-      <form>
-        <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Your Email</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="message">Your Message</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-
-        <button type="submit" class="cta-btn">Send Message</button>
-      </form>
-    </section>
-
-    <!-- Direct Contact Links -->
-    <section class="contact-details glass-card">
-      <h2>Or reach me directly:</h2>
-      <ul class="contact-links">
-        <li>
-          <a href="https://wa.me/60123456789" target="_blank">
-            <img src="assets/img/whatsapp-icon.png" alt="WhatsApp" class="icon"> WhatsApp
-          </a>
-        </li>
-        <li>
-          <a href="tel:+60123456789">
-            <img src="assets/img/phone-icon.png" alt="Phone" class="icon"> +60 12-345 6789
-          </a>
-        </li>
-        <li>
-          <a href="mailto:info@britannia.edu.my">
-            <img src="assets/img/email-icon.png" alt="Email" class="icon"> info@britannia.edu.my
-          </a>
-        </li>
-        <li>
-          <a href="https://goo.gl/maps/yourlocation" target="_blank">
-            <img src="assets/img/location-icon.png" alt="Location" class="icon"> Britannia Language Centre, KL, Malaysia
-          </a>
-        </li>
+<body>
+  <button id="theme-toggle" aria-label="Switch theme">
+    <svg id="theme-icon" width="26" height="26"></svg>
+  </button>
+  <header class="glass-header">
+    <nav class="nav-container">
+      <a class="nav-logo" href="index.html"><span class="logo-icon"></span><span class="logo-text gradient-text">Britannia</span></a>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="why-english.html">Why English</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="success-stories.html">Success</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
-      <div class="socials">
-        <a href="https://instagram.com/yourprofile" target="_blank">
-          <img src="assets/img/instagram-icon.png" alt="Instagram" class="icon">
-        </a>
-        <a href="https://facebook.com/yourprofile" target="_blank">
-          <img src="assets/img/facebook-icon.png" alt="Facebook" class="icon">
-        </a>
-        <a href="https://tiktok.com/@yourprofile" target="_blank">
-          <img src="assets/img/tiktok-icon.png" alt="TikTok" class="icon">
-        </a>
+    </nav>
+  </header>
+  <section class="section glass-card" style="max-width:720px;">
+    <h2>Contact <span class="gradient-text">Us</span></h2>
+    <form class="contact-form" autocomplete="off">
+      <div class="form-row">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
       </div>
-    </section>
-  </main>
-
-  <footer class="glass-nav">
-    <div>&copy; 2025 Rashid at Britannia Language Centre. All rights reserved.</div>
+      <textarea rows="3" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn btn-blue">Send Message</button>
+    </form>
+    <div class="contact-details" style="margin-top:18px;">
+      <span class="icon-red">
+        <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M2.5 5C2.5 3.61929 3.61929 2.5 5 2.5H15C16.3807 2.5 17.5 3.61929 17.5 5V15C17.5 16.3807 16.3807 17.5 15 17.5H5C3.61929 17.5 2.5 16.3807 2.5 15V5Z" stroke="#ec1a2e" stroke-width="1.5"/><circle cx="10" cy="9" r="2" stroke="#ec1a2e" stroke-width="1.5"/><path d="M10 13V14" stroke="#ec1a2e" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </span>
+      <span>info@britannialanguage.my</span>
+      <span class="icon-red">
+        <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M3 5.5V5C3 3.34315 4.34315 2 6 2H14C15.6569 2 17 3.34315 17 5V15C17 16.6569 15.6569 18 14 18H6C4.34315 18 3 16.6569 3 15V14.5" stroke="#ec1a2e" stroke-width="1.5"/><path d="M7 10H13" stroke="#ec1a2e" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </span>
+      <span>+60 12 345 6789</span>
+    </div>
+    <div style="margin-top:24px;font-size:1.09rem;color:#888;text-align:center;">
+      <em>We reply within 24 hours. Or visit us in Kuala Lumpur!</em>
+    </div>
+  </section>
+  <footer class="glass-footer">
+    <div class="footer-content">
+      <a class="footer-logo" href="index.html"><span class="logo-icon"></span><span class="logo-text gradient-text">Britannia</span></a>
+      <nav class="footer-nav">
+        <a href="about.html">About</a>
+        <a href="why-english.html">Why English</a>
+        <a href="courses.html">Courses</a>
+        <a href="success-stories.html">Success</a>
+        <a href="blog.html">Blog</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+      <div class="footer-copy">© 2025 Rashid at Britannia Language Centre</div>
+    </div>
   </footer>
-
-  <script src="js/main.js"></script>
 </body>
 </html>
-
