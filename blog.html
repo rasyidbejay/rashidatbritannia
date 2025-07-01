@@ -1,69 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <title>Blog & Tips | Rashid - Britannia Language Centre</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog | Britannia Language Centre</title>
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script defer src="js/main.js"></script>
 </head>
-<body class="light">
-  <!-- Navigation -->
-  <nav class="glass-nav">
-    <div class="nav-logo">
-      <img src="assets/img/britannia-logo.png" alt="Britannia Logo" height="38">
+<body>
+  <button id="theme-toggle" aria-label="Switch theme">
+    <svg id="theme-icon" width="26" height="26"></svg>
+  </button>
+  <header class="glass-header">
+    <nav class="nav-container">
+      <a class="nav-logo" href="index.html"><span class="logo-icon"></span><span class="logo-text gradient-text">Britannia</span></a>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="why-english.html">Why English</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="success-stories.html">Success</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="section glass-card">
+    <h2><span class="gradient-text">Blog</span> & Tips</h2>
+    <div class="course-cards">
+      <div class="course-card">
+        <h3>How to Speak English Confidently</h3>
+        <p>5 practical steps to boost your spoken English and overcome fear—by Rashid</p>
+        <a href="#" class="btn btn-blue" style="margin-top:8px;">Read More</a>
+      </div>
+      <div class="course-card">
+        <h3>IELTS Writing: Common Mistakes</h3>
+        <p>Essential tips from British teachers for a higher writing score in IELTS exam.</p>
+        <a href="#" class="btn btn-blue" style="margin-top:8px;">Read More</a>
+      </div>
+      <div class="course-card">
+        <h3>Business English: Email Like a Pro</h3>
+        <p>Dos and don’ts for writing professional, effective business emails.</p>
+        <a href="#" class="btn btn-blue" style="margin-top:8px;">Read More</a>
+      </div>
+      <div class="course-card">
+        <h3>Study Hacks for Busy Learners</h3>
+        <p>Time management, habit tips, and motivation for mastering English alongside your work or studies.</p>
+        <a href="#" class="btn btn-blue" style="margin-top:8px;">Read More</a>
+      </div>
     </div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Me</a></li>
-      <li><a href="courses.html">Courses</a></li>
-      <li><a href="why-english.html">Why English?</a></li>
-      <li><a href="success-stories.html">Success Stories</a></li>
-      <li><a href="blog.html" class="active">Blog</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="faq.html">FAQs</a></li>
-    </ul>
-    <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
-  </nav>
-
-  <main>
-    <!-- Blog Header -->
-    <section class="blog-header glass-card">
-      <h1>Britannia Blog & English Tips</h1>
-      <p>Stay inspired with our latest English learning tips, IELTS advice, and centre updates.</p>
-    </section>
-
-    <!-- Blog Posts List -->
-    <section class="blog-list">
-      <article class="blog-post glass-card">
-        <h2>Top 5 Tips to Improve Your English Speaking</h2>
-        <small>by Rashid • 1 July 2025</small>
-        <p>
-          Practice makes perfect! Join an English club, talk to friends, record yourself, use language apps, and don’t be afraid to make mistakes. <a href="#">Read more</a>
-        </p>
-      </article>
-      <article class="blog-post glass-card">
-        <h2>IELTS Writing: How to Structure Your Essay</h2>
-        <small>by Rashid • 25 June 2025</small>
-        <p>
-          Struggling with IELTS writing? Learn a simple formula for Task 1 and Task 2 that examiners love. <a href="#">Read more</a>
-        </p>
-      </article>
-      <article class="blog-post glass-card">
-        <h2>Britannia News: New Course Launch!</h2>
-        <small>by Rashid • 15 June 2025</small>
-        <p>
-          We’re excited to announce a new “Business English for Professionals” course. Registration is open now! <a href="#">Read more</a>
-        </p>
-      </article>
-      <!-- Add more blog posts as needed -->
-    </section>
-  </main>
-
-  <footer class="glass-nav">
-    <div>&copy; 2025 Rashid at Britannia Language Centre. All rights reserved.</div>
+    <div style="margin-top:36px;font-size:1.09rem;color:#888;text-align:center;">
+      <em>New articles every month. Stay tuned!</em>
+    </div>
+  </section>
+  <footer class="glass-footer">
+    <div class="footer-content">
+      <a class="footer-logo" href="index.html"><span class="logo-icon"></span><span class="logo-text gradient-text">Britannia</span></a>
+      <nav class="footer-nav">
+        <a href="about.html">About</a>
+        <a href="why-english.html">Why English</a>
+        <a href="courses.html">Courses</a>
+        <a href="success-stories.html">Success</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-copy">© 2025 Rashid at Britannia Language Centre</div>
+    </div>
   </footer>
-
-  <script src="js/main.js"></script>
 </body>
 </html>
-
