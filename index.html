@@ -398,6 +398,365 @@
         .lang-content.active {
             display: block;
         }
+
+        /* Gallery Styles */
+        .gallery-section {
+            padding: 80px 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 200px);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(108, 207, 246, 0.3);
+        }
+
+        .main-video {
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
+        }
+
+        .image-1 {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
+        }
+
+        .image-2 {
+            grid-column: 4 / 5;
+            grid-row: 1 / 2;
+        }
+
+        .image-3 {
+            grid-column: 3 / 4;
+            grid-row: 2 / 3;
+        }
+
+        .image-4 {
+            grid-column: 4 / 5;
+            grid-row: 2 / 3;
+        }
+
+        .video-2 {
+            grid-column: 1 / 2;
+            grid-row: 3 / 4;
+        }
+
+        .image-5 {
+            grid-column: 2 / 3;
+            grid-row: 3 / 4;
+        }
+
+        .image-6 {
+            grid-column: 3 / 5;
+            grid-row: 3 / 4;
+        }
+
+        .video-placeholder, .image-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-red));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border-radius: 15px;
+        }
+
+        .image-placeholder {
+            background: linear-gradient(135deg, 
+                rgba(108, 207, 246, 0.8), 
+                rgba(236, 26, 46, 0.8)
+            );
+        }
+
+        .play-button {
+            background: rgba(255, 255, 255, 0.9);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .play-button.small {
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+        }
+
+        .gallery-item:hover .play-button {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .image-icon {
+            font-size: 3rem;
+            opacity: 0.9;
+        }
+
+        .video-overlay, .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover .video-overlay,
+        .gallery-item:hover .image-overlay {
+            transform: translateY(0);
+        }
+
+        .video-overlay h3, .image-overlay h4 {
+            margin: 0 0 5px 0;
+            font-size: 1.2rem;
+        }
+
+        .video-overlay p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: var(--card-bg);
+            margin-top: 100px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4, .footer-section h5 {
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-blue);
+            opacity: 1;
+            transform: translateX(5px);
+        }
+
+        .contact-info {
+            space-y: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            gap: 10px;
+        }
+
+        .contact-icon {
+            font-size: 1.2rem;
+            margin-top: 2px;
+        }
+
+        .contact-item p {
+            margin: 0;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+
+        .footer-whatsapp {
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-whatsapp:hover {
+            background: #1ea952;
+            transform: scale(1.05);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-link:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(108, 207, 246, 0.4);
+        }
+
+        .social-icon {
+            font-size: 1.5rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            background: var(--glass-bg);
+            color: var(--text-primary);
+            backdrop-filter: blur(10px);
+        }
+
+        .newsletter-btn {
+            background: var(--primary-red);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-btn:hover {
+            background: #d91726;
+            transform: scale(1.05);
+        }
+
+        .footer-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
+            margin: 40px 0 30px 0;
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .footer-bottom-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            opacity: 0.6;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            opacity: 1;
+            color: var(--primary-blue);
+        }
+
+        /* Gallery Mobile Responsive */
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: repeat(6, 150px);
+                gap: 15px;
+            }
+
+            .main-video {
+                grid-column: 1 / 3;
+                grid-row: 1 / 2;
+            }
+
+            .image-1, .image-2, .image-3, .image-4, .image-5 {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .video-2 {
+                grid-column: 1 / 2;
+                grid-row: 5 / 6;
+            }
+
+            .image-6 {
+                grid-column: 2 / 3;
+                grid-row: 5 / 6;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body data-theme="light">
@@ -473,6 +832,88 @@
                         <div class="card-icon">🚀</div>
                         <h3 data-lang="growth-title">Growth</h3>
                         <p data-lang="growth-text">Accelerate your English proficiency</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Section -->
+                <div class="gallery-section" style="margin-top: 100px;">
+                    <h2 style="text-align: center; font-size: 3rem; color: var(--primary-blue); margin-bottom: 50px;" data-lang="gallery-title">Our Learning Environment</h2>
+                    
+                    <div class="gallery-grid">
+                        <!-- Main Video -->
+                        <div class="gallery-item main-video glass-morphism">
+                            <div class="video-placeholder">
+                                <div class="play-button">▶️</div>
+                                <div class="video-overlay">
+                                    <h3 data-lang="video-title">Welcome to Britannia</h3>
+                                    <p data-lang="video-desc">See our amazing learning environment</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Image Gallery -->
+                        <div class="gallery-item image-1 glass-morphism">
+                            <div class="image-placeholder">
+                                <div class="image-icon">🏫</div>
+                                <div class="image-overlay">
+                                    <h4 data-lang="facility-title">Modern Facilities</h4>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-item image-2 glass-morphism">
+                            <div class="image-placeholder">
+                                <div class="image-icon">👨‍🏫</div>
+                                <div class="image-overlay">
+                                    <h4 data-lang="teachers-title">Expert Teachers</h4>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-item image-3 glass-morphism">
+                            <div class="image-placeholder">
+                                <div class="image-icon">👥</div>
+                                <div class="image-overlay">
+                                    <h4 data-lang="students-title">Happy Students</h4>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-item image-4 glass-morphism">
+                            <div class="image-placeholder">
+                                <div class="image-icon">🎯</div>
+                                <div class="image-overlay">
+                                    <h4 data-lang="success-title">Success Stories</h4>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-item video-2 glass-morphism">
+                            <div class="video-placeholder small">
+                                <div class="play-button small">▶️</div>
+                                <div class="video-overlay">
+                                    <h4 data-lang="testimonial-video">Student Testimonials</h4>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-item image-5 glass-morphism">
+                            <div class="image-placeholder">
+                                <div class="image-icon">📚</div>
+                                <div class="image-overlay">
+                                    <h4 data-lang="resources-title">Learning Resources</h4>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-item image-6 glass-morphism">
+                            <div class="image-placeholder">
+                                <div class="image-icon">🌟</div>
+                                <div class="image-overlay">
+                                    <h4 data-lang="achievements-title">Achievements</h4>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -602,6 +1043,105 @@
         </section>
     </main>
 
+    <!-- Footer -->
+    <footer class="glass-morphism" style="margin: 50px 20px 20px; padding: 60px 40px 30px; border-radius: 30px;">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3 style="color: var(--primary-blue); font-size: 2rem; margin-bottom: 15px;">Rashid</h3>
+                        <p style="color: var(--primary-red); font-weight: 600;" data-lang="footer-subtitle">Proud Britannian</p>
+                        <p style="margin-top: 15px; opacity: 0.8;" data-lang="footer-desc">Empowering students to achieve English excellence at Britannia Language Center</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-lang="footer-quick-links">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" onclick="showSection('home')" data-lang="nav-home">Home</a></li>
+                        <li><a href="#" onclick="showSection('about')" data-lang="nav-about">About Me</a></li>
+                        <li><a href="#" onclick="showSection('courses')" data-lang="nav-courses">Courses</a></li>
+                        <li><a href="#" onclick="showSection('testimonials')" data-lang="nav-testimonials">Testimonials</a></li>
+                        <li><a href="#" onclick="showSection('contact')" data-lang="nav-contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-lang="footer-courses">Courses</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" onclick="showSection('courses')" data-lang="general-english">General English</a></li>
+                        <li><a href="#" onclick="showSection('courses')" data-lang="intensive-english">Intensive English</a></li>
+                        <li><a href="#" onclick="showSection('courses')" data-lang="ielts-prep">IELTS Preparation</a></li>
+                        <li><a href="#" onclick="showSection('courses')" data-lang="summer-programs">Summer Programs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-lang="footer-contact">Contact Info</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <p data-lang="footer-address">Britannia Language Center<br>Main Campus, Education District</p>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">✉️</span>
+                            <p>rashid@britannia.edu</p>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">💬</span>
+                            <button class="footer-whatsapp" onclick="openWhatsApp()" data-lang="whatsapp-btn">Chat on WhatsApp</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-section social-section">
+                    <h4 data-lang="footer-social">Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="Facebook">
+                            <div class="social-icon">📘</div>
+                        </a>
+                        <a href="#" class="social-link" title="Instagram">
+                            <div class="social-icon">📷</div>
+                        </a>
+                        <a href="#" class="social-link" title="YouTube">
+                            <div class="social-icon">📺</div>
+                        </a>
+                        <a href="#" class="social-link" title="LinkedIn">
+                            <div class="social-icon">💼</div>
+                        </a>
+                        <a href="#" class="social-link" title="Twitter">
+                            <div class="social-icon">🐦</div>
+                        </a>
+                    </div>
+                    
+                    <div class="newsletter-signup" style="margin-top: 30px;">
+                        <h5 data-lang="newsletter-title">Stay Updated</h5>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="Enter your email" class="newsletter-input" data-lang="newsletter-placeholder">
+                            <button class="newsletter-btn" data-lang="newsletter-btn">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-divider"></div>
+                <div class="footer-bottom-content">
+                    <p data-lang="footer-copyright">&copy; 2025 Rashid - Proud Britannian. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#" data-lang="footer-privacy">Privacy Policy</a>
+                        <a href="#" data-lang="footer-terms">Terms of Service</a>
+                        <a href="#" data-lang="footer-cookies">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script>
         // Language translations
         const translations = {
@@ -611,6 +1151,30 @@
                 'nav-courses': 'Courses',
                 'nav-testimonials': 'Testimonials',
                 'nav-contact': 'Contact',
+                'gallery-title': 'Our Learning Environment',
+                'video-title': 'Welcome to Britannia',
+                'video-desc': 'See our amazing learning environment',
+                'facility-title': 'Modern Facilities',
+                'teachers-title': 'Expert Teachers',
+                'students-title': 'Happy Students',
+                'success-title': 'Success Stories',
+                'testimonial-video': 'Student Testimonials',
+                'resources-title': 'Learning Resources',
+                'achievements-title': 'Achievements',
+                'footer-subtitle': 'Proud Britannian',
+                'footer-desc': 'Empowering students to achieve English excellence at Britannia Language Center',
+                'footer-quick-links': 'Quick Links',
+                'footer-courses': 'Courses',
+                'footer-contact': 'Contact Info',
+                'footer-address': 'Britannia Language Center<br>Main Campus, Education District',
+                'footer-social': 'Follow Us',
+                'newsletter-title': 'Stay Updated',
+                'newsletter-placeholder': 'Enter your email',
+                'newsletter-btn': 'Subscribe',
+                'footer-copyright': '© 2025 Rashid - Proud Britannian. All rights reserved.',
+                'footer-privacy': 'Privacy Policy',
+                'footer-terms': 'Terms of Service',
+                'footer-cookies': 'Cookie Policy',
                 'excellence-title': 'Excellence',
                 'excellence-text': 'Top-quality English education with proven results',
                 'community-title': 'Community',
