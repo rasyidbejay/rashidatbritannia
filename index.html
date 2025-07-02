@@ -2,323 +2,298 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
+  <title>Master English with Rashid | Britannia Language Centre</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Britannia Language Centre | Master English with Rashid</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --blue: #6ccff6; --red: #ec1a2e; --white: #fff; --charcoal: #22272a;
-      --glass-bg: rgba(255,255,255,0.85);
-      --glass-dark: rgba(32,36,45,0.68);
-      --gradient: linear-gradient(90deg, #6ccff6 0%, #ec1a2e 100%);
-      --radius: 18px;
-      --border: #dbeffd33;
-      --shadow: 0 8px 32px 0 rgba(44,62,80,0.14);
+      --blue: #6ccff6;
+      --red: #ec1a2e;
+      --white: #fff;
+      --dark: #181b22;
+      --shadow: 0 6px 32px 0 rgba(44,62,80,0.12);
+      --radius: 22px;
+      --glass-bg: rgba(255,255,255,0.72);
+      --glass-dark: rgba(24,27,34,0.82);
+      --gradient: linear-gradient(100deg, #6ccff6 0%, #ec1a2e 90%);
     }
     [data-theme="dark"] {
-      --glass-bg: rgba(32,36,45,0.82);
-      --white: #191c21;
-      --charcoal: #f5f8fa;
+      --glass-bg: rgba(36,38,45,0.85);
+      --white: #23252d;
+      --dark: #eaeaea;
     }
     body {
-      margin: 0; padding: 0; font-family: 'Inter', Arial, sans-serif;
-      background: linear-gradient(120deg, #6ccff6 0%, #fff 45%, #ec1a2e 100%);
-      color: var(--charcoal);
+      margin: 0; font-family: 'Inter', Arial, sans-serif; background: var(--white);
+      background: linear-gradient(120deg, #d7f2fa 0%, #fbeaec 100%);
+      color: #191c1e;
       min-height: 100vh;
+      transition: background 0.45s;
     }
-    /* Header Bar */
-    .top-bar {
+    [data-theme="dark"] body {
+      background: linear-gradient(120deg, #23252d 0%, #363b4c 100%);
+      color: #fff;
+    }
+    /* HEADER */
+    .nav-main {
       display: flex; align-items: center; justify-content: space-between;
-      padding: 0.7em 2vw; background: var(--glass-bg); backdrop-filter: blur(10px);
-      box-shadow: 0 2px 12px 0 rgba(100,120,140,0.07);
+      background: var(--glass-bg); box-shadow: var(--shadow);
+      padding: 1.2rem 3vw 1.2rem 2vw; border-radius: 0 0 26px 26px;
+      margin-bottom: 0;
+      position: sticky; top: 0; z-index: 20; backdrop-filter: blur(13px);
     }
-    .top-bar .logo { display: flex; align-items: center; gap: 7px; }
-    .top-bar .logo-text {
-      font-weight: 800; font-size: 1.18rem; letter-spacing: -1px;
+    .brand-block {display: flex; align-items: center; gap: 12px;}
+    .brand-logo {height: 38px; width: 38px; border-radius: 50%; background: var(--gradient);}
+    .brand-text {font-size: 1.6rem; font-weight:900; letter-spacing:-1.5px;
+      background: var(--gradient); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;}
+    .nav-links {display: flex; gap: 2vw;}
+    .nav-links a {text-decoration: none; color: #222; font-weight:700; padding: 0.2em 1em;
+      border-radius: 18px; transition: background .16s;}
+    .nav-links a.active, .nav-links a:hover {background: var(--blue); color: #fff;}
+    [data-theme="dark"] .nav-links a {color: #fff;}
+    .nav-right {display: flex; gap: 1vw; align-items: center;}
+    .theme-toggle {
+      background: var(--glass-bg); border: none; border-radius: 50%; width: 42px; height: 42px;
+      cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow);
+      transition: background .2s;
+    }
+    .theme-toggle svg {width: 27px; height: 27px;}
+    .lang-switch {margin-left: 8px; color: var(--blue); font-weight:600; cursor:pointer;}
+    /* HERO - SPLIT BANNER */
+    .hero-banner {
+      display: flex; flex-wrap: wrap; gap: 4vw; justify-content:space-between; align-items:stretch;
+      max-width: 1240px; margin: 42px auto 0 auto; padding: 0 2vw;
+      min-height: 370px;
+    }
+    .hero-textside {
+      flex: 4 1 330px; display: flex; flex-direction: column; justify-content:center;
+      background: var(--glass-bg); border-radius: var(--radius) 80px var(--radius) var(--radius);
+      box-shadow: var(--shadow); padding: 3vw 2vw 3vw 2vw; position: relative; min-width: 330px;
+    }
+    .hero-textside h1 {
+      font-size: 2.5rem; font-weight: 900; margin:0 0 0.5em 0; letter-spacing:-1.5px;
+    }
+    .hero-textside h1 .gradient-text {
       background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
-    .top-bar nav { flex: 1; text-align: center;}
-    .top-bar nav a {
-      text-decoration: none; color: var(--charcoal); font-weight: 600; margin: 0 1em;
-      border-bottom: 2px solid transparent; padding: 4px 0; transition: border 0.2s;
+    .hero-textside p {font-size: 1.15rem; margin-bottom: 1.1em;}
+    .cta-hero {display: flex; gap: 18px; margin-bottom:1.1em;}
+    .cta-hero a {
+      border: none; border-radius: 32px; font-size:1.09rem; font-weight:800; padding: 0.8em 2.2em;
+      background: var(--blue); color: #fff; box-shadow:0 2px 10px #6ccff62c; transition: background .18s, color .18s;
+      text-decoration:none; outline: none;
     }
-    .top-bar nav a.active, .top-bar nav a:hover { border-bottom: 2px solid var(--blue); color: var(--blue);}
-    .top-bar .actions { display: flex; gap: 1.2em; align-items: center;}
-    .top-bar .lang-switch { cursor: pointer; font-size: 1em; font-weight: 600; color: var(--blue);}
-    .top-bar .theme-toggle {
-      border:none; background:var(--glass-bg); border-radius:50%; width:38px; height:38px; cursor:pointer;
-      display:flex;align-items:center;justify-content:center;box-shadow: 0 2px 8px rgba(0,0,0,.08);
-    }
-
-    /* Hero Section */
-    .hero-section {
-      display: flex; justify-content: space-between; align-items: center;
-      gap: 3vw; max-width: 1250px; margin: 36px auto 0 auto;
-      background: var(--glass-bg); border-radius: var(--radius); box-shadow: var(--shadow);
-      padding: 3vw 3vw 2vw 3vw;
-      position: relative;
-      min-height: 360px;
-    }
-    .hero-content { max-width: 54%; }
-    .hero-headline {
-      font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5em; color: var(--charcoal);
-    }
-    .hero-headline .gradient-text {
-      background: var(--gradient);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .hero-sub { font-size: 1.1rem; margin-bottom: 1.2em; color: #3d4954;}
-    .cta-row { display: flex; gap: 1em; margin-bottom: 1.1em; }
-    .btn, .btn-outline {
-      font-weight: 700; font-size: 1.09em; padding: 11px 30px;
-      border-radius: 27px; border: none; cursor: pointer; box-shadow: none;
-      transition: all .19s; outline:none;
-      background: var(--blue); color: #fff;
-      border: 2px solid var(--blue);
-    }
-    .btn-outline {
-      background: transparent; color: var(--blue); border: 2px solid var(--blue);
-    }
-    .btn:hover, .btn-outline:hover {
-      background: var(--red); border-color: var(--red); color: #fff;
-      transform: translateY(-2px) scale(1.045);
-    }
-    .hero-video-text { font-style: italic; font-size: 1em; margin-bottom: 1em; color: #727c8b;}
+    .cta-hero a.cta-outline {background:transparent; color:var(--blue); border:2px solid var(--blue);}
+    .cta-hero a:hover, .cta-hero a:focus {background: var(--red); color: #fff;}
+    .hero-subvideo {font-size:.97rem; font-style:italic; color:#555; margin-bottom:1em;}
     .hero-profile {
-      min-width: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      flex: 2 1 220px; display: flex; flex-direction: column; align-items: center; justify-content:center;
+      background: var(--glass-bg); border-radius: 80px var(--radius) var(--radius) var(--radius); box-shadow: var(--shadow);
+      min-width: 220px; min-height: 290px; margin-top: 24px;
+      position: relative; overflow: visible;
     }
-    .hero-profile img {
-      width: 134px; height: 134px; border-radius: 50%; object-fit: cover;
-      border: 4px solid var(--blue); box-shadow: 0 5px 22px #6ccff654;
-      background: var(--gradient);
-    }
-    .hero-profile .profile-label { font-weight:700; margin-top: 0.7em; text-align:center;}
-    /* Quick Info Panel */
-    .quick-info {
-      display:flex; gap: 2vw; align-items:center; justify-content: center;
-      background: var(--glass-bg); box-shadow: var(--shadow); border-radius:var(--radius);
-      padding: 1.2em 2vw; margin: 32px auto 18px auto; max-width: 1120px;
-      font-size: 1.08em;
-    }
-    .quick-info .info-item { display:flex; align-items:center; gap:7px; }
-    .quick-info .info-icon { width:26px; height:26px; }
-    /* Courses Highlight Cards */
-    .courses-panel {
-      display: flex; gap: 1.7vw; justify-content: center; margin: 38px auto 18px auto;
-      max-width: 1250px;
-    }
-    .course-card {
-      flex: 1 1 220px; background: var(--glass-bg); border-radius: 13px; box-shadow: var(--shadow);
-      padding: 1.5em 1.2em; text-align:center; min-width: 220px;
-      display: flex; flex-direction: column; gap: 0.7em;
-      align-items: center; border: 1.5px solid #eaf5ffb7;
-    }
-    .course-card img { width: 66px; height: 66px; border-radius: 9px; object-fit: cover;}
-    .course-card .course-title { font-weight: 700; font-size: 1.15em; color: var(--blue);}
-    .course-card .course-desc { font-size: 1em; color: #4d4d55;}
-    .course-card .learn-btn { margin-top: 0.5em; }
-    /* Why Choose Grid */
-    .why-choose {
-      display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; max-width: 1200px; margin: 44px auto;
-      padding: 2em 2vw; background: var(--glass-bg); border-radius: var(--radius); box-shadow: var(--shadow);
-    }
-    .why-item { display: flex; align-items: center; gap: 10px; font-size: 1.07em;}
-    .why-item svg { width: 26px; height: 26px;}
-    /* Accreditations */
-    .accreditations { text-align:center; margin: 17px 0 29px 0; }
-    .accreditations img { height: 34px; margin: 0 10px;}
-    /* Location strip */
-    .locations-strip {
-      display: flex; gap: 1.1vw; justify-content: center; margin: 25px auto; max-width: 1080px;
-    }
-    .loc-thumb { text-align:center;}
-    .loc-thumb img { width: 110px; height: 76px; border-radius: 9px; object-fit: cover; box-shadow: var(--shadow);}
-    .loc-thumb .loc-title { margin-top: 0.4em; font-size: 0.96em;}
-    /* Testimonials */
-    .testimonials-section {
+    .hero-profile img {width: 115px; height: 115px; border-radius: 50%; object-fit: cover; border: 4px solid var(--blue);}
+    .profile-label {margin-top: 1.1em; text-align:center; font-weight: 700;}
+    /* MINI BIO */
+    .bio-box {
       background: var(--glass-bg); border-radius: var(--radius); box-shadow: var(--shadow);
-      padding: 2em 2vw; max-width: 1100px; margin: 39px auto;
+      max-width: 600px; margin: -40px auto 36px auto; padding: 1.7em 2em 1.2em 2em; position: relative;
+    }
+    .bio-box .bio-learn {font-size: 0.98em; color: var(--blue); font-weight: 700; text-decoration: underline;}
+    /* PROGRAM HIGHLIGHTS */
+    .course-programs {
+      display: flex; flex-wrap: wrap; gap: 28px; justify-content: center;
+      margin: 38px auto 36px auto; max-width: 1260px;
+    }
+    .prog-card {
+      flex: 1 1 260px; min-width: 220px; background: var(--glass-bg); border-radius: 14px; box-shadow: var(--shadow);
+      padding: 1.3em 1.3em 1.5em 1.3em; text-align:left; display:flex; flex-direction:column; gap: 0.9em; border:1.5px solid #eaf5ffb7;
+      align-items: flex-start; position: relative;
+    }
+    .prog-card img {width: 54px; height: 54px; border-radius: 7px; object-fit: cover; margin-bottom: 6px;}
+    .prog-title {font-weight:800; font-size: 1.17em; color: var(--blue);}
+    .prog-desc {font-size: 1em; color: #353f47;}
+    .prog-card .prog-btn {margin-top: 0.5em;}
+    .prog-btn {font-size: .97em; border-radius: 19px; border:1.5px solid var(--blue); padding: 0.4em 1.2em; color: var(--blue); background: transparent; text-decoration:none;}
+    .prog-btn:hover {background: var(--blue); color: #fff;}
+    /* WHY CHOOSE US */
+    .whychoose-section {
+      max-width: 1200px; margin: 36px auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap: 1.7vw;
+    }
+    .whycard {
+      background: var(--glass-bg); border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 1.2em 1.1em 1.1em 1.1em; font-size: 1.04em; display:flex; align-items:center; gap: 14px;
+    }
+    .whycard svg {width:28px; height:28px;}
+    /* TESTIMONIALS */
+    .testimonials-main {
+      background: var(--glass-bg); border-radius: var(--radius); box-shadow: var(--shadow);
+      max-width: 1100px; margin: 44px auto 44px auto; padding: 2.2em 2vw;
       display: flex; gap: 2vw; flex-wrap: wrap; justify-content: center;
     }
-    .testimonial-card { background: #fff8; border-radius: 13px; box-shadow: var(--shadow);
-      padding: 1.1em 1.3em; min-width: 210px; max-width: 360px; flex: 1 1 210px;}
-    .testimonial-quote { font-style: italic;}
-    .testimonial-name { font-weight: 600; margin-top: 0.5em;}
-    /* About Rashid */
-    .about-rashid {
+    .testimonial {
+      background: #fff8; border-radius: 15px; box-shadow: var(--shadow); padding: 1.4em 1.6em; min-width: 200px; max-width: 340px; flex: 1 1 210px; margin-bottom: 1.2em;
+      display:flex; flex-direction:column; align-items:flex-start;
+    }
+    .testimonial .quote {font-style: italic;}
+    .testimonial .name {font-weight: 700; margin-top: 0.5em;}
+    /* ACCREDITATIONS */
+    .accredit-belt {text-align:center; margin: 22px auto 14px auto;}
+    .accredit-belt img {height: 36px; margin: 0 13px;}
+    /* CONTACT/LEAD FORM */
+    .lead-form-section {
       background: var(--glass-bg); border-radius: var(--radius); box-shadow: var(--shadow);
-      max-width: 900px; margin: 44px auto; padding: 2em 2vw;
-      display: flex; align-items: center; gap: 22px;
+      max-width: 720px; margin: 42px auto 38px auto; padding: 2em 2vw; text-align:center;
     }
-    .about-rashid img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 2px solid var(--blue);}
-    .about-content { font-size: 1.04em;}
-    .about-link { color: var(--blue); font-weight: 700;}
-    /* Lead Form/Contact */
-    .contact-leadform {
-      background: var(--glass-bg); border-radius: var(--radius); box-shadow: var(--shadow);
-      max-width: 750px; margin: 42px auto 38px auto; padding: 2em 2vw; text-align:center;
+    .lead-form-section form {
+      display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:8px; margin-bottom:7px;
     }
-    .contact-leadform input, .contact-leadform button {
-      padding: 11px 13px; border-radius: 7px; font-size: 1em; margin: 0 5px 14px 0;
-      border: 1.2px solid var(--blue);
+    .lead-form-section input, .lead-form-section button {
+      padding: 11px 13px; border-radius: 7px; font-size: 1em;
+      border: 1.2px solid var(--blue); margin-bottom: 7px;
     }
-    .contact-leadform button { background: var(--blue); color: #fff; font-weight: 700; border:none; }
-    .contact-leadform button:hover { background: var(--red);}
-    /* Footer */
-    .footer-bar {
+    .lead-form-section button {background: var(--blue); color: #fff; font-weight: 700; border:none;}
+    .lead-form-section button:hover {background: var(--red);}
+    .lead-form-section .wa-link {display:block; margin-top:8px; color: var(--blue); font-weight:700;}
+    /* FOOTER */
+    .footer-main {
       background: var(--glass-bg); box-shadow: var(--shadow); border-radius: 0 0 var(--radius) var(--radius);
-      padding: 1.1em 2vw; display: flex; justify-content: space-between; align-items: center;
-      font-size: 1.02em; margin-top: 30px;
+      padding: 1.4em 2vw; display: flex; flex-wrap:wrap; gap: 24px; justify-content: space-between; align-items: center;
+      font-size: 1.04em; margin-top: 30px;
     }
-    .footer-bar .footer-links a { color: var(--charcoal); margin-right: 1em; font-weight: 500; }
-    .footer-bar .footer-links a:hover { color: var(--blue);}
+    .footer-brand {font-size:1.11em; font-weight:800; color:var(--red);}
+    .footer-links a { color: #444; margin-right: 1em; font-weight: 500; }
+    .footer-links a:hover { color: var(--blue);}
     .footer-social svg { width: 25px; height: 25px; margin-left: 10px;}
-    @media (max-width: 950px) {
-      .hero-section {flex-direction:column; gap:20px; text-align:center;}
-      .hero-content {max-width: 100%;}
-      .hero-profile {margin:0 auto;}
-      .courses-panel, .locations-strip {flex-direction:column; align-items:center;}
-      .why-choose {grid-template-columns:1fr;}
-      .about-rashid {flex-direction:column; text-align:center;}
+    @media (max-width:900px) {
+      .hero-banner, .course-programs, .whychoose-section, .testimonials-main, .footer-main {flex-direction:column; align-items:center;}
+      .hero-banner, .whychoose-section, .course-programs {gap:30px;}
+      .lead-form-section form {flex-direction:column;}
+      .nav-main {flex-direction:column; gap:9px;}
+    }
+    @media (max-width:600px) {
+      .hero-banner, .whychoose-section, .testimonials-main, .footer-main {padding-left: 1vw; padding-right:1vw;}
+      .hero-textside h1 {font-size:1.4rem;}
+      .brand-text {font-size:1.2rem;}
     }
   </style>
 </head>
 <body>
   <!-- HEADER -->
-  <div class="top-bar">
-    <div class="logo">
-      <img src="assets/britannia-logo.png" alt="Britannia Logo" style="height:32px;">
-      <span class="logo-text">Britannia</span>
+  <div class="nav-main">
+    <div class="brand-block">
+      <div class="brand-logo"></div>
+      <span class="brand-text">Britannia</span>
     </div>
-    <nav>
+    <div class="nav-links">
       <a href="#" class="active">Home</a>
       <a href="#courses">Courses</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
-    </nav>
-    <div class="actions">
+    </div>
+    <div class="nav-right">
       <span class="lang-switch">EN | عربي</span>
-      <button class="theme-toggle" aria-label="Theme switch">
-        <!-- Simple sun/moon icon -->
-        <svg id="theme-icon" width="21" height="21" viewBox="0 0 22 22">
-          <circle cx="11" cy="11" r="8" stroke="#6ccff6" stroke-width="2"/>
-          <circle id="moon" cx="11" cy="11" r="6" fill="#ec1a2e" style="opacity:0"/>
+      <button class="theme-toggle" aria-label="Toggle theme">
+        <svg id="theme-icon" viewBox="0 0 32 32">
+          <circle cx="16" cy="16" r="11" fill="none" stroke="#6ccff6" stroke-width="2"/>
+          <circle id="moon" cx="16" cy="16" r="8" fill="#ec1a2e" style="opacity:0"/>
           <g id="sun" style="opacity:1">
-            <line x1="11" y1="2" x2="11" y2="5" stroke="#6ccff6" stroke-width="1.5"/>
-            <line x1="11" y1="17" x2="11" y2="20" stroke="#6ccff6" stroke-width="1.5"/>
-            <line x1="2" y1="11" x2="5" y2="11" stroke="#6ccff6" stroke-width="1.5"/>
-            <line x1="17" y1="11" x2="20" y2="11" stroke="#6ccff6" stroke-width="1.5"/>
-            <line x1="5.8" y1="5.8" x2="7.9" y2="7.9" stroke="#6ccff6" stroke-width="1.2"/>
-            <line x1="16.2" y1="5.8" x2="14.1" y2="7.9" stroke="#6ccff6" stroke-width="1.2"/>
-            <line x1="5.8" y1="16.2" x2="7.9" y2="14.1" stroke="#6ccff6" stroke-width="1.2"/>
-            <line x1="16.2" y1="16.2" x2="14.1" y2="14.1" stroke="#6ccff6" stroke-width="1.2"/>
+            <line x1="16" y1="4" x2="16" y2="9" stroke="#6ccff6" stroke-width="1.7"/>
+            <line x1="16" y1="23" x2="16" y2="28" stroke="#6ccff6" stroke-width="1.7"/>
+            <line x1="4" y1="16" x2="9" y2="16" stroke="#6ccff6" stroke-width="1.7"/>
+            <line x1="23" y1="16" x2="28" y2="16" stroke="#6ccff6" stroke-width="1.7"/>
           </g>
         </svg>
       </button>
     </div>
   </div>
-
-  <!-- HERO SECTION -->
-  <section class="hero-section">
-    <div class="hero-content">
-      <div class="hero-headline">
+  <!-- HERO SPLIT BANNER -->
+  <section class="hero-banner">
+    <div class="hero-textside">
+      <h1>
         Master English with <span class="gradient-text">Rashid</span> —<br>
-        <span style="font-weight:600">Your Personal Guide at Britannia Language Center</span>
+        <span style="font-weight:600">Your Personal Guide at Britannia Language Centre</span>
+      </h1>
+      <p>Helping you unlock new opportunities through expert English courses.</p>
+      <div class="cta-hero">
+        <a href="#contact">Book a Free Consultation</a>
+        <a href="#resources" class="cta-outline">Download Free IELTS Guide</a>
       </div>
-      <div class="hero-sub">Helping you unlock new opportunities through expert English courses.</div>
-      <div class="cta-row">
-        <a href="#contact" class="btn">Book a Free Consultation</a>
-        <a href="#resources" class="btn-outline">Download Your Free IELTS Study Guide</a>
-      </div>
-      <div class="hero-video-text">
+      <div class="hero-subvideo">
         “Hi, I’m Rashid. Welcome! As a marketing executive at Britannia, I’ll help you find the perfect course and guide you every step of the way. Let’s start your journey to success today!”
       </div>
     </div>
     <div class="hero-profile">
-      <img src="assets/rashid-profile.jpg" alt="Rashid Abdullah, Marketing Executive">
+      <img src="assets/rashid-profile.jpg" alt="Rashid Abdullah">
       <div class="profile-label">Rashid Abdullah<br><span style="font-weight:400;font-size:.98em">Marketing Executive</span></div>
     </div>
   </section>
-
-  <!-- QUICK INFO PANEL -->
-  <div class="quick-info">
-    <div class="info-item"><img class="info-icon" src="assets/uk-flag.png" alt="British Teachers"> British-qualified teachers</div>
-    <div class="info-item"><img class="info-icon" src="assets/online.png" alt="Online Classes"> Online & In-Person</div>
-    <div class="info-item"><img class="info-icon" src="assets/scholarship.png" alt="Scholarships"> Scholarships</div>
-    <div class="info-item"><a href="#contact" class="btn" style="font-size:0.97em;padding:8px 24px;">Book Now</a></div>
+  <!-- MINI BIO -->
+  <div class="bio-box">
+    Hi, I’m Rashid. I’ve helped hundreds of students improve their English and reach their study goals at Britannia. With personalised guidance and expert knowledge of Britannia’s courses, I’m dedicated to making your learning experience smooth and successful.
+    <a class="bio-learn" href="about.html">Learn more about me →</a>
   </div>
-
-  <!-- COURSES HIGHLIGHT -->
-  <div class="courses-panel" id="courses">
-    <div class="course-card">
+  <!-- COURSE HIGHLIGHTS -->
+  <section class="course-programs" id="courses">
+    <div class="prog-card">
       <img src="assets/general-english.jpg" alt="General English">
-      <div class="course-title">General English</div>
-      <div class="course-desc">Build your foundation with practical, everyday English. All levels welcome.</div>
-      <a href="#courses" class="learn-btn btn-outline">Learn More</a>
+      <div class="prog-title">General English</div>
+      <div class="prog-desc">Build your foundation with practical everyday English.</div>
+      <a href="courses.html" class="prog-btn">Learn More</a>
     </div>
-    <div class="course-card">
+    <div class="prog-card">
       <img src="assets/ielts-prep.jpg" alt="IELTS Preparation">
-      <div class="course-title">IELTS Preparation</div>
-      <div class="course-desc">Get ready to ace your IELTS exam with expert guidance and strategies.</div>
-      <a href="#courses" class="learn-btn btn-outline">Learn More</a>
+      <div class="prog-title">IELTS Preparation</div>
+      <div class="prog-desc">Get ready to ace your IELTS exam with expert tips and practice.</div>
+      <a href="courses.html" class="prog-btn">Learn More</a>
     </div>
-    <div class="course-card">
+    <div class="prog-card">
       <img src="assets/business-english.jpg" alt="Business English">
-      <div class="course-title">Business English</div>
-      <div class="course-desc">Professional English for career growth and workplace confidence.</div>
-      <a href="#courses" class="learn-btn btn-outline">Learn More</a>
+      <div class="prog-title">Business English</div>
+      <div class="prog-desc">Improve your professional communication skills for career growth.</div>
+      <a href="courses.html" class="prog-btn">Learn More</a>
     </div>
-  </div>
-
-  <!-- WHY CHOOSE BRITANNIA -->
-  <div class="why-choose">
-    <div class="why-item"><svg><circle cx="13" cy="13" r="11" stroke="#6ccff6" stroke-width="2"/><path d="M8 13.5L12 17.5L19 10.5" stroke="#6ccff6" stroke-width="2" fill="none"/></svg>Native English Teachers</div>
-    <div class="why-item"><svg><rect x="6" y="8" width="12" height="8" rx="2" stroke="#ec1a2e" stroke-width="2" fill="none"/></svg>Flexible Schedule</div>
-    <div class="why-item"><svg><circle cx="13" cy="13" r="11" stroke="#6ccff6" stroke-width="2"/><text x="10" y="18" font-size="11" fill="#ec1a2e" font-family="Arial">%</text></svg>Scholarships</div>
-    <div class="why-item"><svg><circle cx="13" cy="13" r="11" stroke="#6ccff6" stroke-width="2"/><rect x="8" y="8" width="10" height="10" stroke="#ec1a2e" stroke-width="2" fill="none"/></svg>Online & In-Centre</div>
-    <div class="why-item"><svg><circle cx="13" cy="13" r="11" stroke="#6ccff6" stroke-width="2"/><path d="M10 10h6v6h-6z" stroke="#ec1a2e" stroke-width="2" fill="none"/></svg>Student Success</div>
-    <div class="why-item"><svg><circle cx="13" cy="13" r="11" stroke="#6ccff6" stroke-width="2"/><path d="M10 17l6-6M16 17l-6-6" stroke="#ec1a2e" stroke-width="2"/></svg>Friendly Community</div>
-  </div>
-
-  <!-- ACCREDITATION LOGOS -->
-  <div class="accreditations">
-    <img src="assets/acc1.png" alt="Accreditation 1">
-    <img src="assets/acc2.png" alt="Accreditation 2">
-    <img src="assets/acc3.png" alt="Accreditation 3">
-  </div>
-
-  <!-- LOCATIONS STRIP -->
-  <div class="locations-strip">
-    <div class="loc-thumb"><img src="assets/kl-centre.jpg" alt="KL Centre"><div class="loc-title">KL Centre</div></div>
-    <div class="loc-thumb"><img src="assets/online-class.jpg" alt="Online"><div class="loc-title">Online Classes</div></div>
-    <div class="loc-thumb"><img src="assets/global-reach.jpg" alt="Global Reach"><div class="loc-title">Global Reach</div></div>
-  </div>
-
+  </section>
+  <!-- WHY CHOOSE US -->
+  <section class="whychoose-section">
+    <div class="whycard"><svg viewBox="0 0 26 26"><circle cx="13" cy="13" r="11" stroke="#6ccff6" stroke-width="2"/><path d="M8 13.5L12 17.5L19 10.5" stroke="#6ccff6" stroke-width="2" fill="none"/></svg>
+      Expert Native English Teachers
+    </div>
+    <div class="whycard"><svg viewBox="0 0 26 26"><rect x="5" y="10" width="16" height="7" rx="2" stroke="#ec1a2e" stroke-width="2" fill="none"/></svg>
+      Flexible Course Schedules
+    </div>
+    <div class="whycard"><svg viewBox="0 0 26 26"><circle cx="13" cy="13" r="11" stroke="#6ccff6" stroke-width="2"/><text x="8" y="19" font-size="13" fill="#ec1a2e" font-family="Arial">✓</text></svg>
+      Proven Student Success
+    </div>
+    <div class="whycard"><svg viewBox="0 0 26 26"><circle cx="13" cy="13" r="11" stroke="#6ccff6" stroke-width="2"/><path d="M10 10h6v6h-6z" stroke="#ec1a2e" stroke-width="2" fill="none"/></svg>
+      Friendly & Supportive Community
+    </div>
+    <div class="whycard"><svg viewBox="0 0 26 26"><circle cx="13" cy="13" r="11" stroke="#6ccff6" stroke-width="2"/><rect x="7" y="7" width="12" height="12" stroke="#ec1a2e" stroke-width="2" fill="none"/></svg>
+      Affordable Fees & Scholarships
+    </div>
+    <div class="whycard"><svg viewBox="0 0 26 26"><circle cx="13" cy="13" r="11" stroke="#6ccff6" stroke-width="2"/><rect x="9" y="9" width="8" height="8" stroke="#ec1a2e" stroke-width="2" fill="none"/></svg>
+      Online & In-Centre Classes
+    </div>
+  </section>
   <!-- TESTIMONIALS -->
-  <div class="testimonials-section">
-    <div class="testimonial-card">
-      <div class="testimonial-quote">"Thanks to Rashid and Britannia, I improved my IELTS score by 7 points in just three months!"</div>
-      <div class="testimonial-name">— Aisha M.</div>
+  <section class="testimonials-main">
+    <div class="testimonial">
+      <span class="quote">"Thanks to Rashid and Britannia, I improved my IELTS score by 7 points in just three months!"</span>
+      <span class="name">— Aisha M.</span>
     </div>
-    <div class="testimonial-card">
-      <div class="testimonial-quote">"Rashid’s support made enrolling and studying so easy and enjoyable. Highly recommend!"</div>
-      <div class="testimonial-name">— Daniel T.</div>
+    <div class="testimonial">
+      <span class="quote">"Rashid’s support made enrolling and studying so easy and enjoyable. Highly recommend!"</span>
+      <span class="name">— Daniel T.</span>
     </div>
+    <!-- Add more testimonials if needed -->
+  </section>
+  <!-- ACCREDITATIONS -->
+  <div class="accredit-belt">
+    <img src="assets/accredit1.png" alt="Accreditation 1">
+    <img src="assets/accredit2.png" alt="Accreditation 2">
+    <img src="assets/accredit3.png" alt="Accreditation 3">
   </div>
-
-  <!-- ABOUT RASHID -->
-  <div class="about-rashid" id="about">
-    <img src="assets/rashid-profile.jpg" alt="Rashid Abdullah">
-    <div class="about-content">
-      <div style="font-weight:700; font-size:1.07em;">About Rashid</div>
-      Hi, I’m Rashid. I’ve helped hundreds of students improve their English and reach their study goals at Britannia. With personalised guidance and expert knowledge of Britannia’s courses, I’m dedicated to making your learning experience smooth and successful.<br>
-      <a class="about-link" href="about.html">Learn more about me →</a>
-    </div>
-  </div>
-
   <!-- CONTACT/LEAD FORM -->
-  <div class="contact-leadform" id="contact">
+  <div class="lead-form-section" id="contact">
     <div style="font-weight:700; font-size:1.09em; margin-bottom:0.7em;">
       Ready to start your English learning journey?<br>
       Book your free consultation with Rashid today.
@@ -329,42 +304,35 @@
       <input type="tel" placeholder="Phone/WhatsApp" required>
       <button type="submit">Book Consultation</button>
     </form>
-    <div style="margin-top:10px;">
-      <a href="https://wa.me/60123456789" style="color:var(--blue);font-weight:600;text-decoration:none;">Chat with Rashid on WhatsApp →</a>
-    </div>
+    <a class="wa-link" href="https://wa.me/60123456789">Chat with Rashid on WhatsApp →</a>
   </div>
-
   <!-- FOOTER -->
-  <footer class="footer-bar">
-    <div class="footer-logo">
-      <img src="assets/britannia-logo.png" alt="Britannia Logo" style="height:27px;vertical-align:middle;">
-      <span class="logo-text" style="font-size:1.13em;">Britannia</span>
-    </div>
-    <div class="footer-links">
+  <footer class="footer-main">
+    <span class="footer-brand">Britannia</span>
+    <span class="footer-links">
       <a href="#">Home</a>
       <a href="#courses">Courses</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
       <a href="privacy.html">Privacy Policy</a>
-    </div>
-    <div class="footer-social">
+    </span>
+    <span class="footer-social">
       <a href="#"><svg fill="#6ccff6" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M16.24 7.76A6 6 0 0 0 7.76 16.24 6 6 0 0 0 16.24 7.76zm-1.41 1.42A4 4 0 1 1 8.59 15.17 4 4 0 0 1 14.83 9.18z"/></svg></a>
       <a href="#"><svg fill="#ec1a2e" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><rect x="8" y="12" width="8" height="2" rx="1"/></svg></a>
-    </div>
-    <div style="font-size:.96em; color:#888; margin-left:2em;">
+    </span>
+    <span style="font-size:.96em; color:#888;">
       &copy; 2025 Rashid at Britannia Language Centre
-    </div>
+    </span>
   </footer>
   <script>
-    // Simple Apple-like theme switcher (sun/moon)
+    // Apple-style theme toggle
     const btn = document.querySelector('.theme-toggle');
     const icon = document.getElementById('theme-icon');
     btn.addEventListener('click', () => {
-      const dark = document.documentElement.getAttribute('data-theme') === 'dark';
-      document.documentElement.setAttribute('data-theme', dark ? 'light' : 'dark');
-      // Animate icon (simple)
-      icon.querySelector('#sun').style.opacity = dark ? '1' : '0';
-      icon.querySelector('#moon').style.opacity = dark ? '0' : '1';
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      icon.querySelector('#sun').style.opacity = isDark ? '1' : '0';
+      icon.querySelector('#moon').style.opacity = isDark ? '0' : '1';
     });
   </script>
 </body>
