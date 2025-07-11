@@ -1547,6 +1547,28 @@
             const speed = scrolled * 0.5;
             parallax.style.transform = `translateY(${speed}px)`;
         });
+
+        function openLightbox(type, src) {
+        var lightbox = document.getElementById('lightbox');
+        var content = document.getElementById('lightbox-content');
+        if(type === 'img') {
+            content.innerHTML = `<img src="${src}" alt="Gallery Image"/>`;
+        } else if(type === 'video') {
+            content.innerHTML = `
+                <video controls autoplay style="max-width:100%;max-height:80vh; border-radius:16px;">
+                    <source src="${src}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>`;
+        }
+        lightbox.classList.add('active');
+    }
+    function closeLightbox() {
+        var lightbox = document.getElementById('lightbox');
+        var content = document.getElementById('lightbox-content');
+        lightbox.classList.remove('active');
+        content.innerHTML = '';
+    }
+
     </script>
 </body>
 </html>
