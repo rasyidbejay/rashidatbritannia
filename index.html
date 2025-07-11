@@ -838,89 +838,76 @@
                     </div>
                 </div>
 
-                <!-- Gallery Section -->
-                <div class="gallery-section" style="margin-top: 100px;">
-                    <h2 style="text-align: center; font-size: 3rem; color: var(--primary-blue); margin-bottom: 50px;" data-lang="gallery-title">Our Learning Environment</h2>
-                    
-                    <div class="gallery-grid">
-                        <!-- Main Video -->
-                        <div class="gallery-item main-video glass-morphism">
-                            <div class="video-placeholder">
-                                <div class="play-button">▶️</div>
-                                <div class="video-overlay">
-                                    <h3 data-lang="video-title">Welcome to Britannia</h3>
-                                    <p data-lang="video-desc">See our amazing learning environment</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Image Gallery -->
-                        <div class="gallery-item image-1 glass-morphism">
-                            <div class="image-placeholder">
-                                <div class="image-icon">🏫</div>
-                                <div class="image-overlay">
-                                    <h4 data-lang="facility-title">Modern Facilities</h4>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="gallery-item image-2 glass-morphism">
-                            <div class="image-placeholder">
-                                <div class="image-icon">👨‍🏫</div>
-                                <div class="image-overlay">
-                                    <h4 data-lang="teachers-title">Expert Teachers</h4>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="gallery-item image-3 glass-morphism">
-                            <div class="image-placeholder">
-                                <div class="image-icon">👥</div>
-                                <div class="image-overlay">
-                                    <h4 data-lang="students-title">Happy Students</h4>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="gallery-item image-4 glass-morphism">
-                            <div class="image-placeholder">
-                                <div class="image-icon">🎯</div>
-                                <div class="image-overlay">
-                                    <h4 data-lang="success-title">Success Stories</h4>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="gallery-item video-2 glass-morphism">
-                            <div class="video-placeholder small">
-                                <div class="play-button small">▶️</div>
-                                <div class="video-overlay">
-                                    <h4 data-lang="testimonial-video">Student Testimonials</h4>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="gallery-item image-5 glass-morphism">
-                            <div class="image-placeholder">
-                                <div class="image-icon">📚</div>
-                                <div class="image-overlay">
-                                    <h4 data-lang="resources-title">Learning Resources</h4>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="gallery-item image-6 glass-morphism">
-                            <div class="image-placeholder">
-                                <div class="image-icon">🌟</div>
-                                <div class="image-overlay">
-                                    <h4 data-lang="achievements-title">Achievements</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!-- Gallery Section -->
+<div class="gallery-section" style="margin-top: 100px;">
+    <h2 style="text-align: center; font-size: 3rem; color: var(--primary-blue); margin-bottom: 50px;" data-lang="gallery-title">Our Learning Environment</h2>
+    
+    <div class="gallery-grid">
+        <!-- Main Video -->
+        <div class="gallery-item main-video glass-morphism" onclick="openLightbox('video', 'assets/welcome.mp4')">
+            <video poster="assets/welcome-thumb.jpg" style="width:100%; height:100%; border-radius:15px; object-fit:cover;" muted>
+                <source src="assets/welcome.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay">
+                <h3 data-lang="video-title">Welcome to Britannia</h3>
+                <p data-lang="video-desc">See our amazing learning environment</p>
             </div>
-        </section>
+        </div>
+        
+        <!-- Image Gallery -->
+        <div class="gallery-item image-1 glass-morphism" onclick="openLightbox('img', 'assets/classroom.jpg')">
+            <img src="assets/classroom.jpg" alt="Modern Facilities" style="width:100%; height:100%; object-fit:cover; border-radius:15px;">
+            <div class="image-overlay">
+                <h4 data-lang="facility-title">Modern Facilities</h4>
+            </div>
+        </div>
+        
+        <div class="gallery-item image-2 glass-morphism" onclick="openLightbox('img', 'assets/teachers.jpg')">
+            <img src="assets/teachers.jpg" alt="Expert Teachers" style="width:100%; height:100%; object-fit:cover; border-radius:15px;">
+            <div class="image-overlay">
+                <h4 data-lang="teachers-title">Expert Teachers</h4>
+            </div>
+        </div>
+        
+        <div class="gallery-item image-3 glass-morphism" onclick="openLightbox('img', 'assets/students.jpg')">
+            <img src="assets/students.jpg" alt="Happy Students" style="width:100%; height:100%; object-fit:cover; border-radius:15px;">
+            <div class="image-overlay">
+                <h4 data-lang="students-title">Happy Students</h4>
+            </div>
+        </div>
+        
+        <div class="gallery-item image-4 glass-morphism" onclick="openLightbox('img', 'assets/success.jpg')">
+            <img src="assets/success.jpg" alt="Success Stories" style="width:100%; height:100%; object-fit:cover; border-radius:15px;">
+            <div class="image-overlay">
+                <h4 data-lang="success-title">Success Stories</h4>
+            </div>
+        </div>
+        
+        <div class="gallery-item video-2 glass-morphism" onclick="openLightbox('video', 'assets/testimonials.mp4')">
+            <video poster="assets/testimonials-thumb.jpg" style="width:100%; height:100%; border-radius:15px; object-fit:cover;" muted>
+                <source src="assets/testimonials.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay">
+                <h4 data-lang="testimonial-video">Student Testimonials</h4>
+            </div>
+        </div>
+        
+        <div class="gallery-item image-5 glass-morphism" onclick="openLightbox('img', 'assets/resources.jpg')">
+            <img src="assets/resources.jpg" alt="Learning Resources" style="width:100%; height:100%; object-fit:cover; border-radius:15px;">
+            <div class="image-overlay">
+                <h4 data-lang="resources-title">Learning Resources</h4>
+            </div>
+        </div>
+        
+        <div class="gallery-item image-6 glass-morphism" onclick="openLightbox('img', 'assets/achievements.jpg')">
+            <img src="assets/achievements.jpg" alt="Achievements" style="width:100%; height:100%; object-fit:cover; border-radius:15px;">
+            <div class="image-overlay">
+                <h4 data-lang="achievements-title">Achievements</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
 
         <!-- About Section -->
         <section id="about" class="section">
