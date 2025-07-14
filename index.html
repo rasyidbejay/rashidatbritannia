@@ -1,801 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <title>Rashid - Britannia LC Consultant</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-blue: #6ccff6;
-            --primary-red: #ec1a2e;
-            --glass-bg: rgba(108, 207, 246, 0.1);
-            --glass-border: rgba(108, 207, 246, 0.2);
-            --text-light: #333;
-            --text-dark: #fff;
-            --bg-light: #ffffff;
-            --bg-dark: #1a1a1a;
-            --card-light: rgba(255, 255, 255, 0.8);
-            --card-dark: rgba(255, 255, 255, 0.1);
-        }
-
-        [data-theme="dark"] {
-            --text-primary: var(--text-dark);
-            --bg-primary: var(--bg-dark);
-            --card-bg: var(--card-dark);
-        }
-
-        [data-theme="light"] {
-            --text-primary: var(--text-light);
-            --bg-primary: var(--bg-light);
-            --card-bg: var(--card-light);
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            transition: all 0.3s ease;
-            overflow-x: hidden;
-        }
-
-        .glass-morphism {
-            background: var(--card-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        }
-
-        .liquid-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: linear-gradient(45deg, var(--primary-blue), var(--primary-red), var(--primary-blue));
-            background-size: 400% 400%;
-            animation: liquidFlow 15s ease-in-out infinite;
-            opacity: 0.1;
-        }
-
-        @keyframes liquidFlow {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .slide-in {
-            opacity: 0;
-            transform: translateY(50px);
-            animation: slideIn 0.8s ease-out forwards;
-        }
-
-        @keyframes slideIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Header */
-        header {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            right: 20px;
-            z-index: 1000;
-            padding: 15px 30px;
-            transition: all 0.3s ease;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary-blue);
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        .nav-link {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .nav-link:hover {
-            color: var(--primary-blue);
-            transform: translateY(-2px);
-        }
-
-        .nav-controls {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .theme-toggle, .lang-select {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 25px;
-            padding: 8px 15px;
-            color: var(--text-primary);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .theme-toggle:hover, .lang-select:hover {
-            background: var(--primary-blue);
-            color: white;
-            transform: scale(1.05);
-        }
-
-        /* Main Content */
-        main {
-            padding-top: 120px;
-        }
-
-        .section {
-            min-height: 100vh;
-            padding: 80px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .container {
-            max-width: 1200px;
-            width: 100%;
-            margin: 0 auto;
-        }
-
-        /* Home Section */
-        .hero {
-            text-align: center;
-            padding: 100px 0;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            background: linear-gradient(45deg, var(--primary-blue), var(--primary-red));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 40px;
-            opacity: 0.8;
-        }
-
-        .cta-button {
-            background: linear-gradient(45deg, var(--primary-blue), var(--primary-red));
-            color: white;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 35px rgba(108, 207, 246, 0.4);
-        }
-
-        /* Cards */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .card {
-            padding: 40px;
-            text-align: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .card:hover {
-            transform: translateY(-10px) scale(1.02);
-        }
-
-        .card-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(45deg, var(--primary-blue), var(--primary-red));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 2rem;
-        }
-
-        .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--primary-blue);
-        }
-
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            font-size: 3rem;
-            margin-bottom: 30px;
-            color: var(--primary-blue);
-        }
-
-        .about-text p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .about-image {
-            width: 100%;
-            height: 400px;
-            background: linear-gradient(45deg, var(--primary-blue), var(--primary-red));
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: white;
-        }
-
-        /* Testimonials */
-        .testimonial {
-            padding: 40px;
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        .testimonial p {
-            font-size: 1.3rem;
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-
-        .testimonial-author {
-            color: var(--primary-blue);
-            font-weight: 600;
-        }
-
-        /* Contact Form */
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--primary-blue);
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 15px;
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            color: var(--text-primary);
-            font-size: 1rem;
-        }
-
-        .form-group textarea {
-            height: 120px;
-            resize: vertical;
-        }
-
-        .whatsapp-button {
-            background: #25D366;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            margin: 20px 10px;
-            transition: all 0.3s ease;
-        }
-
-        .whatsapp-button:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .section {
-                padding: 40px 20px;
-            }
-        }
-
-        /* Hidden sections */
-        .section {
-            display: none;
-        }
-
-        .section.active {
-            display: flex;
-        }
-
-        /* Language Content */
-        .lang-content {
-            display: none;
-        }
-
-        .lang-content.active {
-            display: block;
-        }
-
-        /* Gallery Styles */
-        .gallery-section {
-            padding: 80px 0;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(3, 200px);
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.4s ease;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(108, 207, 246, 0.3);
-        }
-
-        .main-video {
-            grid-column: 1 / 3;
-            grid-row: 1 / 3;
-        }
-
-        .image-1 {
-            grid-column: 3 / 4;
-            grid-row: 1 / 2;
-        }
-
-        .image-2 {
-            grid-column: 4 / 5;
-            grid-row: 1 / 2;
-        }
-
-        .image-3 {
-            grid-column: 3 / 4;
-            grid-row: 2 / 3;
-        }
-
-        .image-4 {
-            grid-column: 4 / 5;
-            grid-row: 2 / 3;
-        }
-
-        .video-2 {
-            grid-column: 1 / 2;
-            grid-row: 3 / 4;
-        }
-
-        .image-5 {
-            grid-column: 2 / 3;
-            grid-row: 3 / 4;
-        }
-
-        .image-6 {
-            grid-column: 3 / 5;
-            grid-row: 3 / 4;
-        }
-
-        .video-placeholder, .image-placeholder {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-red));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            border-radius: 15px;
-        }
-
-        .image-placeholder {
-            background: linear-gradient(135deg, 
-                rgba(108, 207, 246, 0.8), 
-                rgba(236, 26, 46, 0.8)
-            );
-        }
-
-        .play-button {
-            background: rgba(255, 255, 255, 0.9);
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .play-button.small {
-            width: 50px;
-            height: 50px;
-            font-size: 1.2rem;
-        }
-
-        .gallery-item:hover .play-button {
-            transform: scale(1.1);
-            background: rgba(255, 255, 255, 1);
-        }
-
-        .image-icon {
-            font-size: 3rem;
-            opacity: 0.9;
-        }
-
-        .video-overlay, .image-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-            color: white;
-            padding: 20px;
-            transform: translateY(100%);
-            transition: all 0.3s ease;
-        }
-
-        .gallery-item:hover .video-overlay,
-        .gallery-item:hover .image-overlay {
-            transform: translateY(0);
-        }
-
-        .video-overlay h3, .image-overlay h4 {
-            margin: 0 0 5px 0;
-            font-size: 1.2rem;
-        }
-
-        .video-overlay p {
-            margin: 0;
-            opacity: 0.9;
-            font-size: 0.9rem;
-        }
-
-        /* Footer Styles */
-        footer {
-            background: var(--card-bg);
-            margin-top: 100px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1.5fr 1.5fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-section h4, .footer-section h5 {
-            color: var(--primary-blue);
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-        }
-
-        .footer-links {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: var(--text-primary);
-            text-decoration: none;
-            opacity: 0.8;
-            transition: all 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary-blue);
-            opacity: 1;
-            transform: translateX(5px);
-        }
-
-        .contact-info {
-            space-y: 15px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 15px;
-            gap: 10px;
-        }
-
-        .contact-icon {
-            font-size: 1.2rem;
-            margin-top: 2px;
-        }
-
-        .contact-item p {
-            margin: 0;
-            opacity: 0.8;
-            line-height: 1.4;
-        }
-
-        .footer-whatsapp {
-            background: #25D366;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .footer-whatsapp:hover {
-            background: #1ea952;
-            transform: scale(1.05);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .social-link {
-            width: 50px;
-            height: 50px;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .social-link:hover {
-            background: var(--primary-blue);
-            color: white;
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 10px 25px rgba(108, 207, 246, 0.4);
-        }
-
-        .social-icon {
-            font-size: 1.5rem;
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .newsletter-input {
-            flex: 1;
-            padding: 10px 15px;
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            background: var(--glass-bg);
-            color: var(--text-primary);
-            backdrop-filter: blur(10px);
-        }
-
-        .newsletter-btn {
-            background: var(--primary-red);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .newsletter-btn:hover {
-            background: #d91726;
-            transform: scale(1.05);
-        }
-
-        .footer-divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
-            margin: 40px 0 30px 0;
-        }
-
-        .footer-bottom-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .footer-bottom-links {
-            display: flex;
-            gap: 30px;
-        }
-
-        .footer-bottom-links a {
-            color: var(--text-primary);
-            text-decoration: none;
-            opacity: 0.6;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .footer-bottom-links a:hover {
-            opacity: 1;
-            color: var(--primary-blue);
-        }
-
-        .lightbox {
-                display: none;
-                position: fixed;
-                z-index: 9999;
-                left: 0; top: 0; width: 100vw; height: 100vh;
-                background: rgba(0,0,0,0.75);
-                backdrop-filter: blur(7px);
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
-            }
-            .lightbox.active {
-                display: flex;
-            }
-            .lightbox-content {
-                background: rgba(255,255,255,0.08);
-                border-radius: 20px;
-                max-width: 90vw;
-                max-height: 90vh;
-                box-shadow: 0 8px 32px rgba(0,0,0,0.28);
-                padding: 0;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .lightbox-content img,
-            .lightbox-content video {
-                max-width: 90vw;
-                max-height: 80vh;
-                border-radius: 18px;
-                background: #fff;
-                box-shadow: 0 8px 32px rgba(108,207,246,0.22);
-            }
-
-
-        /* Gallery Mobile Responsive */
-        @media (max-width: 768px) {
-            .gallery-grid {
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: repeat(6, 150px);
-                gap: 15px;
-            }
-
-            .main-video {
-                grid-column: 1 / 3;
-                grid-row: 1 / 2;
-            }
-
-            .image-1, .image-2, .image-3, .image-4, .image-5 {
-                grid-column: span 1;
-                grid-row: span 1;
-            }
-
-            .video-2 {
-                grid-column: 1 / 2;
-                grid-row: 5 / 6;
-            }
-
-            .image-6 {
-                grid-column: 2 / 3;
-                grid-row: 5 / 6;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                text-align: center;
-            }
-
-            .footer-bottom-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .social-links {
-                justify-content: center;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body data-theme="light">
     <div class="liquid-bg"></div>
@@ -828,26 +38,31 @@
         <section id="home" class="section active">
             <div class="container">
                 <div class="hero slide-in">
+                    <!-- English -->
                     <div class="lang-content active" data-lang="en">
                         <h1 class="floating">Welcome to Rashid's Britannia Hub</h1>
                         <p>Your passionate Britannian helping students succeed in their English journey</p>
                         <a href="#" class="cta-button" onclick="showSection('contact')">Start Your English Journey</a>
                     </div>
+                    <!-- Arabic -->
                     <div class="lang-content" data-lang="ar">
                         <h1 class="floating">مرحباً بكم في مركز راشد البريطاني</h1>
                         <p>البريطاني المتحمس الذي يساعد الطلاب على النجاح في رحلة تعلم الإنجليزية</p>
                         <a href="#" class="cta-button" onclick="showSection('contact')">ابدأ رحلة تعلم الإنجليزية</a>
                     </div>
+                    <!-- Korean -->
                     <div class="lang-content" data-lang="ko">
                         <h1 class="floating">라시드의 브리타니아 허브에 오신 것을 환영합니다</h1>
                         <p>학생들의 영어 학습 여정을 돕는 열정적인 브리타니안</p>
                         <a href="#" class="cta-button" onclick="showSection('contact')">영어 학습 여정 시작하기</a>
                     </div>
+                    <!-- Japanese -->
                     <div class="lang-content" data-lang="ja">
                         <h1 class="floating">ラシードのブリタニアハブへようこそ</h1>
                         <p>学生の英語学習の成功を支援する情熱的なブリタニアン</p>
                         <a href="#" class="cta-button" onclick="showSection('contact')">英語学習の旅を始める</a>
                     </div>
+                    <!-- Russian -->
                     <div class="lang-content" data-lang="ru">
                         <h1 class="floating">Добро пожаловать в Britannia Hub Рашида</h1>
                         <p>Ваш страстный британец, помогающий студентам добиться успеха в изучении английского языка</p>
@@ -873,81 +88,75 @@
                     </div>
                 </div>
 
-            <!-- Gallery Section -->
-            <div class="gallery-section" style="margin-top: 100px;">
-                <h2 style="text-align: center; font-size: 3rem; color: var(--primary-blue); margin-bottom: 50px;" data-lang="gallery-title">Our Learning Environment</h2>
-                
-                <div class="gallery-grid">
-                    <!-- Main Video -->
-                    <div class="gallery-item main-video glass-morphism" onclick="openLightbox('video', 'assets/welcome.mp4')">
-                        <video poster="assets/welcome-thumb.jpg" style="width:100%; height:100%; border-radius:15px; object-fit:cover;" muted>
-                            <source src="assets/welcome.mp4" type="video/mp4">
-                        </video>
-                        <div class="video-overlay">
-                            <h3 data-lang="video-title">Welcome to Britannia</h3>
-                            <p data-lang="video-desc">See our amazing learning environment</p>
+                <!-- Gallery Section -->
+                <div class="gallery-section" style="margin-top: 100px;">
+                    <h2 style="text-align: center; font-size: 3rem; color: var(--primary-blue); margin-bottom: 50px;" data-lang="gallery-title">Our Learning Environment</h2>
+                    <div class="gallery-grid">
+                        <!-- Main Video -->
+                        <div class="gallery-item main-video glass-morphism" onclick="openLightbox('video', 'assets/welcome.mp4')">
+                            <video poster="assets/welcome-thumb.jpg" style="width:100%; height:100%; border-radius:15px; object-fit:cover;" muted>
+                                <source src="assets/welcome.mp4" type="video/mp4" />
+                            </video>
+                            <div class="video-overlay">
+                                <h3 data-lang="video-title">Welcome to Britannia</h3>
+                                <p data-lang="video-desc">See our amazing learning environment</p>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <!-- Image Gallery -->
-                    <div class="gallery-item image-1 glass-morphism" onclick="openLightbox('img', 'assets/classroom.jpg')">
-                        <img src="assets/classroom.jpg" alt="Modern Facilities" style="width:100%; height:100%; object-fit:cover; border-radius:15px;">
-                        <div class="image-overlay">
-                            <h4 data-lang="facility-title">Modern Facilities</h4>
+                        
+                        <!-- Images -->
+                        <div class="gallery-item image-1 glass-morphism" onclick="openLightbox('img', 'assets/classroom.jpg')">
+                            <img src="assets/classroom.jpg" alt="Modern Facilities" style="width:100%; height:100%; object-fit:cover; border-radius:15px;" />
+                            <div class="image-overlay">
+                                <h4 data-lang="facility-title">Modern Facilities</h4>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="gallery-item image-2 glass-morphism" onclick="openLightbox('img', 'assets/teachers.jpg')">
-                        <img src="assets/teachers.jpg" alt="Expert Teachers" style="width:100%; height:100%; object-fit:cover; border-radius:15px;">
-                        <div class="image-overlay">
-                            <h4 data-lang="teachers-title">Expert Teachers</h4>
+                        <div class="gallery-item image-2 glass-morphism" onclick="openLightbox('img', 'assets/teachers.jpg')">
+                            <img src="assets/teachers.jpg" alt="Expert Teachers" style="width:100%; height:100%; object-fit:cover; border-radius:15px;" />
+                            <div class="image-overlay">
+                                <h4 data-lang="teachers-title">Expert Teachers</h4>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="gallery-item image-3 glass-morphism" onclick="openLightbox('img', 'assets/students.png')">
-                        <img src="assets/students.png" alt="Happy Students" style="width:100%; height:100%; object-fit:cover; border-radius:15px;">
-                        <div class="image-overlay">
-                            <h4 data-lang="students-title">Happy Students</h4>
+                        <div class="gallery-item image-3 glass-morphism" onclick="openLightbox('img', 'assets/students.png')">
+                            <img src="assets/students.png" alt="Happy Students" style="width:100%; height:100%; object-fit:cover; border-radius:15px;" />
+                            <div class="image-overlay">
+                                <h4 data-lang="students-title">Happy Students</h4>
+                            </div>
                         </div>
-                    </div>
-
-                    
-                    <div class="gallery-item image-4 glass-morphism" onclick="openLightbox('img', 'assets/success.jpg')">
-                        <img src="assets/success.jpg" alt="Success Stories" style="width:100%; height:100%; object-fit:cover; border-radius:15px;">
-                        <div class="image-overlay">
-                            <h4 data-lang="success-title">Success Stories</h4>
+                        <div class="gallery-item image-4 glass-morphism" onclick="openLightbox('img', 'assets/success.jpg')">
+                            <img src="assets/success.jpg" alt="Success Stories" style="width:100%; height:100%; object-fit:cover; border-radius:15px;" />
+                            <div class="image-overlay">
+                                <h4 data-lang="success-title">Success Stories</h4>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="gallery-item video-2 glass-morphism" onclick="openLightbox('video', 'assets/testimonials.mp4')">
-                        <video poster="assets/testimonials-thumb.png" style="width:100%; height:100%; border-radius:15px; object-fit:cover;" muted>
-                            <source src="assets/testimonials.mp4" type="video/mp4">
-                        </video>
-                        <div class="video-overlay">
-                            <h4 data-lang="testimonial-video">Student Testimonials</h4>
+                        <div class="gallery-item video-2 glass-morphism" onclick="openLightbox('video', 'assets/testimonials.mp4')">
+                            <video poster="assets/testimonials-thumb.png" style="width:100%; height:100%; border-radius:15px; object-fit:cover;" muted>
+                                <source src="assets/testimonials.mp4" type="video/mp4" />
+                            </video>
+                            <div class="video-overlay">
+                                <h4 data-lang="testimonial-video">Student Testimonials</h4>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="gallery-item image-5 glass-morphism" onclick="openLightbox('img', 'assets/resources.jpg')">
-                        <img src="assets/resources.jpg" alt="Learning Resources" style="width:100%; height:100%; object-fit:cover; border-radius:15px;">
-                        <div class="image-overlay">
-                            <h4 data-lang="resources-title">Learning Resources</h4>
+                        <div class="gallery-item image-5 glass-morphism" onclick="openLightbox('img', 'assets/resources.jpg')">
+                            <img src="assets/resources.jpg" alt="Learning Resources" style="width:100%; height:100%; object-fit:cover; border-radius:15px;" />
+                            <div class="image-overlay">
+                                <h4 data-lang="resources-title">Learning Resources</h4>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="gallery-item image-6 glass-morphism" onclick="openLightbox('img', 'assets/achievements.jpg')">
-                        <img src="assets/achievements.jpg" alt="Achievements" style="width:100%; height:100%; object-fit:cover; border-radius:15px;">
-                        <div class="image-overlay">
-                            <h4 data-lang="achievements-title">Achievements</h4>
+                        <div class="gallery-item image-6 glass-morphism" onclick="openLightbox('img', 'assets/achievements.jpg')">
+                            <img src="assets/achievements.jpg" alt="Achievements" style="width:100%; height:100%; object-fit:cover; border-radius:15px;" />
+                            <div class="image-overlay">
+                                <h4 data-lang="achievements-title">Achievements</h4>
+                            </div>
                         </div>
                     </div>
                 </div>
+                
+                <!-- Lightbox Modal -->
+                <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+                    <div class="lightbox-content" id="lightbox-content"></div>
+                </div>
             </div>
-            
-            <!-- Lightbox Modal -->
-            <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-                <div class="lightbox-content" id="lightbox-content"></div>
-            </div>
+        </section>
 
         <!-- About Section -->
         <section id="about" class="section">
@@ -1034,19 +243,16 @@
                     <form onsubmit="handleSubmit(event)">
                         <div class="form-group">
                             <label data-lang="name-label">Full Name</label>
-                            <input type="text" name="name" required>
+                            <input type="text" name="name" required />
                         </div>
-                        
                         <div class="form-group">
                             <label data-lang="email-label">Email</label>
-                            <input type="email" name="email" required>
+                            <input type="email" name="email" required />
                         </div>
-                        
                         <div class="form-group">
                             <label data-lang="phone-label">Phone Number</label>
-                            <input type="tel" name="phone" required>
+                            <input type="tel" name="phone" required />
                         </div>
-                        
                         <div class="form-group">
                             <label data-lang="course-label">Course Interest</label>
                             <select name="course" required>
@@ -1057,12 +263,10 @@
                                 <option value="summer" data-lang="summer-programs">Summer Programs</option>
                             </select>
                         </div>
-                        
                         <div class="form-group">
                             <label data-lang="message-label">Message</label>
                             <textarea name="message" placeholder="Tell us about your English learning goals..."></textarea>
                         </div>
-                        
                         <div style="text-align: center;">
                             <button type="submit" class="cta-button" data-lang="submit-btn">Send Enquiry</button>
                             <button type="button" class="whatsapp-button" onclick="openWhatsApp()" data-lang="whatsapp-btn">💬 Chat on WhatsApp</button>
@@ -1128,33 +332,22 @@
                     </div>
                 </div>
                 
-             <div class="footer-section social-section">
-                <h4 data-lang="footer-social">Follow Us</h4>
-                <div class="social-links">
-                    <a href="#" class="social-link" title="Facebook" target="_blank">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="social-link" title="Instagram" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#" class="social-link" title="YouTube" target="_blank">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                    <a href="#" class="social-link" title="LinkedIn" target="_blank">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="#" class="social-link" title="Twitter" target="_blank">
-                        <i class="fab fa-x-twitter"></i>
-                    </a>
+                <div class="footer-section social-section">
+                    <h4 data-lang="footer-social">Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" title="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link" title="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link" title="Twitter" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                    </div>
                 </div>
-            </div>
-                    
-                    <div class="newsletter-signup" style="margin-top: 30px;">
-                        <h5 data-lang="newsletter-title">Stay Updated</h5>
-                        <div class="newsletter-form">
-                            <input type="email" placeholder="Enter your email" class="newsletter-input" data-lang="newsletter-placeholder">
-                            <button class="newsletter-btn" data-lang="newsletter-btn">Subscribe</button>
-                        </div>
+
+                <div class="newsletter-signup" style="margin-top: 30px;">
+                    <h5 data-lang="newsletter-title">Stay Updated</h5>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" class="newsletter-input" data-lang="newsletter-placeholder" />
+                        <button class="newsletter-btn" data-lang="newsletter-btn">Subscribe</button>
                     </div>
                 </div>
             </div>
@@ -1173,403 +366,6 @@
         </div>
     </footer>
 
-    <script>
-        // Language translations
-        const translations = {
-            en: {
-                'nav-home': 'Home',
-                'nav-about': 'About Me',
-                'nav-courses': 'Courses',
-                'nav-testimonials': 'Testimonials',
-                'nav-contact': 'Contact',
-                'gallery-title': 'Our Learning Environment',
-                'video-title': 'Welcome to Britannia',
-                'video-desc': 'See our amazing learning environment',
-                'facility-title': 'Modern Facilities',
-                'teachers-title': 'Expert Teachers',
-                'students-title': 'Happy Students',
-                'success-title': 'Success Stories',
-                'testimonial-video': 'Student Testimonials',
-                'resources-title': 'Learning Resources',
-                'achievements-title': 'Achievements',
-                'footer-subtitle': 'Proud Britannian',
-                'footer-desc': 'Empowering students to achieve English excellence at Britannia Language Center',
-                'footer-quick-links': 'Quick Links',
-                'footer-courses': 'Courses',
-                'footer-contact': 'Contact Info',
-                'footer-address': 'Britannia Language Center<br>Main Campus, Education District',
-                'footer-social': 'Follow Us',
-                'newsletter-title': 'Stay Updated',
-                'newsletter-placeholder': 'Enter your email',
-                'newsletter-btn': 'Subscribe',
-                'footer-copyright': '© 2025 Rashid - Proud Britannian. All rights reserved.',
-                'footer-privacy': 'Privacy Policy',
-                'footer-terms': 'Terms of Service',
-                'footer-cookies': 'Cookie Policy',
-                'excellence-title': 'Excellence',
-                'excellence-text': 'Top-quality English education with proven results',
-                'community-title': 'Community',
-                'community-text': 'Join a supportive learning community',
-                'growth-title': 'Growth',
-                'growth-text': 'Accelerate your English proficiency',
-                'courses-title': 'Our Courses',
-                'general-english': 'General English',
-                'general-english-desc': 'Build strong foundations in speaking, listening, reading, and writing',
-                'intensive-english': 'Intensive English',
-                'intensive-english-desc': 'Fast-track your English skills with intensive study programs',
-                'ielts-prep': 'IELTS Preparation',
-                'ielts-prep-desc': 'Achieve your target IELTS score with expert guidance',
-                'summer-programs': 'Summer Programs',
-                'summer-programs-desc': 'Special summer courses for accelerated learning',
-                'testimonials-title': 'What Students Say',
-                'testimonial1': '"Rashid and the Britannia team helped me achieve my IELTS goal of 7.5! The teaching method is excellent and the environment is so supportive."',
-                'testimonial2': '"I improved my English speaking confidence tremendously. Britannia\'s approach is practical and effective. Highly recommended!"',
-                'testimonial3': '"The best language center I\'ve ever been to. Professional teachers, modern facilities, and great results!"',
-                'contact-title': 'Get Started Today',
-                'name-label': 'Full Name',
-                'email-label': 'Email',
-                'phone-label': 'Phone Number',
-                'course-label': 'Course Interest',
-                'select-course': 'Select a course',
-                'message-label': 'Message',
-                'submit-btn': 'Send Enquiry',
-                'whatsapp-btn': '💬 Chat on WhatsApp'
-            },
-            ar: {
-                'nav-home': 'الرئيسية',
-                'nav-about': 'عني',
-                'nav-courses': 'الدورات',
-                'nav-testimonials': 'الشهادات',
-                'nav-contact': 'اتصل بنا',
-                'excellence-title': 'التميز',
-                'excellence-text': 'تعليم إنجليزي عالي الجودة مع نتائج مثبتة',
-                'community-title': 'المجتمع',
-                'community-text': 'انضم إلى مجتمع تعليمي داعم',
-                'growth-title': 'النمو',
-                'growth-text': 'عجل من إتقانك للإنجليزية',
-                'courses-title': 'دوراتنا',
-                'general-english': 'الإنجليزية العامة',
-                'general-english-desc': 'بناء أسس قوية في التحدث والاستماع والقراءة والكتابة',
-                'intensive-english': 'الإنجليزية المكثفة',
-                'intensive-english-desc': 'طور مهاراتك الإنجليزية بسرعة مع البرامج المكثفة',
-                'ielts-prep': 'إعداد الآيلتس',
-                'ielts-prep-desc': 'حقق درجة الآيلتس المستهدفة مع التوجيه المتخصص',
-                'summer-programs': 'البرامج الصيفية',
-                'summer-programs-desc': 'دورات صيفية خاصة للتعلم المعجل',
-                'testimonials-title': 'ماذا يقول الطلاب',
-                'contact-title': 'ابدأ اليوم',
-                'name-label': 'الاسم الكامل',
-                'email-label': 'البريد الإلكتروني',
-                'phone-label': 'رقم الهاتف',
-                'course-label': 'اهتمام الدورة',
-                'select-course': 'اختر دورة',
-                'message-label': 'الرسالة',
-                'submit-btn': 'إرسال الاستفسار',
-                'whatsapp-btn': '💬 دردش على واتساب'
-            },
-            ko: {
-                'nav-home': '홈',
-                'nav-about': '소개',
-                'nav-courses': '과정',
-                'nav-testimonials': '후기',
-                'nav-contact': '연락처',
-                'excellence-title': '우수성',
-                'excellence-text': '검증된 결과를 가진 최고 품질의 영어 교육',
-                'community-title': '커뮤니티',
-                'community-text': '지원적인 학습 커뮤니티에 참여하세요',
-                'growth-title': '성장',
-                'growth-text': '영어 실력을 가속화하세요',
-                'courses-title': '우리의 과정',
-                'general-english': '일반 영어',
-                'general-english-desc': '말하기, 듣기, 읽기, 쓰기의 탄탄한 기초 구축',
-                'intensive-english': '집중 영어',
-                'intensive-english-desc': '집중 학습 프로그램으로 영어 실력을 빠르게 향상',
-                'ielts-prep': 'IELTS 준비',
-                'ielts-prep-desc': '전문 지도로 목표 IELTS 점수 달성',
-                'summer-programs': '여름 프로그램',
-                'summer-programs-desc': '가속 학습을 위한 특별 여름 과정',
-                'testimonials-title': '학생들의 말',
-                'testimonial1': '"라시드와 브리타니아 팀이 제 IELTS 목표인 7.5점을 달성하도록 도와주었습니다! 교육 방법이 훌륭하고 환경이 매우 지원적입니다."',
-                'testimonial2': '"영어 말하기 자신감이 엄청나게 향상되었습니다. 브리타니아의 접근 방식은 실용적이고 효과적입니다. 강력 추천합니다!"',
-                'testimonial3': '"제가 가본 최고의 언어 센터입니다. 전문 교사, 현대적인 시설, 그리고 훌륭한 결과!"',
-                'contact-title': '오늘 시작하세요',
-                'name-label': '성명',
-                'email-label': '이메일',
-                'phone-label': '전화번호',
-                'course-label': '관심 과정',
-                'select-course': '과정 선택',
-                'message-label': '메시지',
-                'submit-btn': '문의 보내기',
-                'whatsapp-btn': '💬 WhatsApp으로 채팅'
-            },
-            ja: {
-                'nav-home': 'ホーム',
-                'nav-about': '私について',
-                'nav-courses': 'コース',
-                'nav-testimonials': '証言',
-                'nav-contact': 'お問い合わせ',
-                'excellence-title': '優秀性',
-                'excellence-text': '実績のある最高品質の英語教育',
-                'community-title': 'コミュニティ',
-                'community-text': 'サポート的な学習コミュニティに参加',
-                'growth-title': '成長',
-                'growth-text': '英語能力を加速させる',
-                'courses-title': '私たちのコース',
-                'general-english': '一般英語',
-                'general-english-desc': 'スピーキング、リスニング、リーディング、ライティングの強固な基礎を構築',
-                'intensive-english': '集中英語',
-                'intensive-english-desc': '集中学習プログラムで英語スキルを早期向上',
-                'ielts-prep': 'IELTS準備',
-                'ielts-prep-desc': '専門指導で目標IELTSスコアを達成',
-                'summer-programs': 'サマープログラム',
-                'summer-programs-desc': '加速学習のための特別夏期コース',
-                'testimonials-title': '学生の声',
-                'testimonial1': '"ラシードとブリタニアチームが私のIELTS目標7.5を達成するのを助けてくれました！教育方法は素晴らしく、環境は非常にサポート的です。"',
-                'testimonial2': '"英語を話す自信が大幅に向上しました。ブリタニアのアプローチは実用的で効果的です。強くお勧めします！"',
-                'testimonial3': '"今まで行った中で最高の語学センターです。プロの教師、現代的な施設、そして素晴らしい結果！"',
-                'contact-title': '今日から始めましょう',
-                'name-label': 'フルネーム',
-                'email-label': 'メール',
-                'phone-label': '電話番号',
-                'course-label': 'コースへの関心',
-                'select-course': 'コースを選択',
-                'message-label': 'メッセージ',
-                'submit-btn': 'お問い合わせ送信',
-                'whatsapp-btn': '💬 WhatsAppでチャット'
-            },
-            ru: {
-                'nav-home': 'Главная',
-                'nav-about': 'Обо мне',
-                'nav-courses': 'Курсы',
-                'nav-testimonials': 'Отзывы',
-                'nav-contact': 'Контакты',
-                'excellence-title': 'Превосходство',
-                'excellence-text': 'Высококачественное образование по английскому языку с проверенными результатами',
-                'community-title': 'Сообщество',
-                'community-text': 'Присоединяйтесь к поддерживающему учебному сообществу',
-                'growth-title': 'Рост',
-                'growth-text': 'Ускорьте свое владение английским языком',
-                'courses-title': 'Наши курсы',
-                'general-english': 'Общий английский',
-                'general-english-desc': 'Создайте прочную основу в говорении, аудировании, чтении и письме',
-                'intensive-english': 'Интенсивный английский',
-                'intensive-english-desc': 'Быстро улучшите свои навыки английского языка с интенсивными программами',
-                'ielts-prep': 'Подготовка к IELTS',
-                'ielts-prep-desc': 'Достигните целевого балла IELTS с экспертным руководством',
-                'summer-programs': 'Летние программы',
-                'summer-programs-desc': 'Специальные летние курсы для ускоренного обучения',
-                'testimonials-title': 'Что говорят студенты',
-                'testimonial1': '"Рашид и команда Britannia помогли мне достичь цели IELTS 7.5! Метод обучения отличный, а атмосфера очень поддерживающая."',
-                'testimonial2': '"Я значительно улучшил уверенность в разговорном английском. Подход Britannia практичен и эффективен. Очень рекомендую!"',
-                'testimonial3': '"Лучший языковой центр, в котором я когда-либо был. Профессиональные учителя, современные помещения и отличные результаты!"',
-                'contact-title': 'Начните сегодня',
-                'name-label': 'Полное имя',
-                'email-label': 'Электронная почта',
-                'phone-label': 'Номер телефона',
-                'course-label': 'Интерес к курсу',
-                'select-course': 'Выберите курс',
-                'message-label': 'Сообщение',
-                'submit-btn': 'Отправить запрос',
-                'whatsapp-btn': '💬 Чат в WhatsApp'
-            }
-        };
-
-        let currentLang = 'en';
-        let currentTheme = 'light';
-
-        // Theme Toggle Function
-        function toggleTheme() {
-            const body = document.body;
-            const themeToggle = document.querySelector('.theme-toggle');
-            
-            if (currentTheme === 'light') {
-                body.setAttribute('data-theme', 'dark');
-                themeToggle.textContent = '☀️';
-                currentTheme = 'dark';
-            } else {
-                body.setAttribute('data-theme', 'light');
-                themeToggle.textContent = '🌙';
-                currentTheme = 'light';
-            }
-        }
-
-        // Language Change Function
-        function changeLanguage(lang) {
-            currentLang = lang;
-            
-            // Update all elements with data-lang attributes
-            const elements = document.querySelectorAll('[data-lang]');
-            elements.forEach(element => {
-                const key = element.getAttribute('data-lang');
-                if (translations[lang] && translations[lang][key]) {
-                    if (element.tagName === 'INPUT' && element.type === 'submit') {
-                        element.value = translations[lang][key];
-                    } else if (element.tagName === 'OPTION') {
-                        element.textContent = translations[lang][key];
-                    } else {
-                        element.textContent = translations[lang][key];
-                    }
-                }
-            });
-
-            // Update language-specific content sections
-            document.querySelectorAll('.lang-content').forEach(content => {
-                content.classList.remove('active');
-            });
-            
-            document.querySelectorAll(`[data-lang="${lang}"]`).forEach(content => {
-                if (content.classList.contains('lang-content')) {
-                    content.classList.add('active');
-                }
-            });
-
-            // Update document direction for Arabic
-            if (lang === 'ar') {
-                document.body.style.direction = 'rtl';
-                document.body.style.textAlign = 'right';
-            } else {
-                document.body.style.direction = 'ltr';
-                document.body.style.textAlign = 'left';
-            }
-        }
-
-        // Section Navigation
-        function showSection(sectionId) {
-            // Hide all sections
-            document.querySelectorAll('.section').forEach(section => {
-                section.classList.remove('active');
-            });
-            
-            // Show selected section
-            document.getElementById(sectionId).classList.add('active');
-            
-            // Add slide-in animation
-            const activeSection = document.getElementById(sectionId);
-            activeSection.style.opacity = '0';
-            activeSection.style.transform = 'translateY(50px)';
-            
-            setTimeout(() => {
-                activeSection.style.transition = 'all 0.8s ease-out';
-                activeSection.style.opacity = '1';
-                activeSection.style.transform = 'translateY(0)';
-            }, 100);
-        }
-
-        // Form Submission
-        function handleSubmit(event) {
-            event.preventDefault();
-            const formData = new FormData(event.target);
-            
-            let message = `New enquiry from ${formData.get('name')}:\n\n`;
-            message += `Email: ${formData.get('email')}\n`;
-            message += `Phone: ${formData.get('phone')}\n`;
-            message += `Course Interest: ${formData.get('course')}\n`;
-            message += `Message: ${formData.get('message')}`;
-            
-            // Here you would typically send the data to a server
-            alert('Thank you for your enquiry! We will contact you soon.');
-            event.target.reset();
-        }
-
-        // WhatsApp Integration
-        function openWhatsApp() {
-            const message = encodeURIComponent("Hi Rashid! I'm interested in learning more about Britannia Language Center courses. Can you help me get started?");
-            const phoneNumber = "601115301464"; // Replace with actual WhatsApp number
-            const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
-            window.open(whatsappURL, '_blank');
-        }
-
-        // Initialize page
-        document.addEventListener('DOMContentLoaded', function() {
-            // Set initial theme
-            document.body.setAttribute('data-theme', 'light');
-            
-            // Add scroll animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('slide-in');
-                    }
-                });
-            }, observerOptions);
-
-            // Observe all cards and sections
-            document.querySelectorAll('.card, .testimonial, .about-content').forEach(el => {
-                observer.observe(el);
-            });
-
-            // Add dynamic liquid background
-            const liquidBg = document.querySelector('.liquid-bg');
-            let hue = 0;
-            
-            setInterval(() => {
-                hue = (hue + 1) % 360;
-                liquidBg.style.filter = `hue-rotate(${hue}deg)`;
-            }, 100);
-        });
-
-        // Mobile menu toggle (for responsive design)
-        function toggleMobileMenu() {
-            const navMenu = document.querySelector('.nav-menu');
-            navMenu.classList.toggle('active');
-        }
-
-        // Smooth scrolling for better UX
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add floating animation delays
-        document.addEventListener('DOMContentLoaded', function() {
-            const floatingElements = document.querySelectorAll('.floating');
-            floatingElements.forEach((element, index) => {
-                element.style.animationDelay = `${index * 0.2}s`;
-            });
-        });
-
-        // Parallax effect for liquid background
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelector('.liquid-bg');
-            const speed = scrolled * 0.5;
-            parallax.style.transform = `translateY(${speed}px)`;
-        });
-
-        function openLightbox(type, src) {
-        var lightbox = document.getElementById('lightbox');
-        var content = document.getElementById('lightbox-content');
-        if(type === 'img') {
-            content.innerHTML = `<img src="${src}" alt="Gallery Image"/>`;
-        } else if(type === 'video') {
-            content.innerHTML = `
-                <video controls autoplay style="max-width:100%;max-height:80vh; border-radius:16px;">
-                    <source src="${src}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>`;
-        }
-        lightbox.classList.add('active');
-    }
-    function closeLightbox() {
-        var lightbox = document.getElementById('lightbox');
-        var content = document.getElementById('lightbox-content');
-        lightbox.classList.remove('active');
-        content.innerHTML = '';
-    }
-
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
