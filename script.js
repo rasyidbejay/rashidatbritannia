@@ -1,4 +1,4 @@
-// Language translations object
+// Language translations object (partial shown, add your full translations accordingly)
 const translations = {
     en: {
         'nav-home': 'Home',
@@ -89,9 +89,23 @@ const translations = {
         'select-course': 'اختر دورة',
         'message-label': 'الرسالة',
         'submit-btn': 'إرسال الاستفسار',
-        'whatsapp-btn': '💬 دردش على واتساب'
+        'whatsapp-btn': '💬 دردش على واتساب',
+        'footer-subtitle': 'خبير بريتانيا',
+        'footer-desc': 'تمكين الطلاب من تحقيق التميز في اللغة الإنجليزية في مركز بريتانيا للغات',
+        'footer-quick-links': 'روابط سريعة',
+        'footer-courses': 'الدورات',
+        'footer-contact': 'معلومات الاتصال',
+        'footer-address': 'مركز بريتانيا للغات<br>الحرم الرئيسي، منطقة التعليم',
+        'footer-social': 'تابعنا',
+        'newsletter-title': 'ابقَ على اطلاع',
+        'newsletter-placeholder': 'أدخل بريدك الإلكتروني',
+        'newsletter-btn': 'اشترك',
+        'footer-copyright': '© 2025 راشد - خبير بريتانيا. كل الحقوق محفوظة.',
+        'footer-privacy': 'سياسة الخصوصية',
+        'footer-terms': 'شروط الخدمة',
+        'footer-cookies': 'سياسة الكوكيز'
     },
-    // other languages omitted here for brevity, but keep the same structure
+    // Add other languages (ko, ja, ru) here with full translations similarly...
 };
 
 let currentLang = 'en';
@@ -116,29 +130,8 @@ function toggleTheme() {
 // Change language and update text content
 function changeLanguage(lang) {
     currentLang = lang;
-    
-    const elements = document.querySelectorAll('[data-lang]');
-    elements.forEach(el => {
-        const key = el.getAttribute('data-lang');
-        if (translations[lang] && translations[lang][key]) {
-            if (el.tagName === 'INPUT' && el.type === 'submit') {
-                el.value = translations[lang][key];
-            } else if (el.tagName === 'OPTION') {
-                el.textContent = translations[lang][key];
-            } else {
-                el.textContent = translations[lang][key];
-            }
-        }
-    });
 
-    document.querySelectorAll('.lang-content').forEach(content => content.classList.remove('active'));
-    document.querySelectorAll(`[data-lang="${lang}"]`).forEach(content => {
-        if (content.classList.contains('lang-content')) {
-            content.classList.add('active');
-        }
-    });
-
-    // RTL for Arabic
+    // Update direction for Arabic
     if (lang === 'ar') {
         document.body.style.direction = 'rtl';
         document.body.style.textAlign = 'right';
@@ -146,6 +139,37 @@ function changeLanguage(lang) {
         document.body.style.direction = 'ltr';
         document.body.style.textAlign = 'left';
     }
+
+    // Show only relevant lang-content blocks
+    document.querySelectorAll('.lang-content').forEach(el => {
+        if (el.getAttribute('data-lang') === lang) {
+            el.classList.add('active');
+        } else {
+            el.classList.remove('active');
+        }
+    });
+
+    // Translate all elements with data-translate-key
+    document.querySelectorAll('[data-translate-key]').forEach(el => {
+        const key = el.getAttribute('data-translate-key');
+        if (translations[lang] && translations[lang][key]) {
+            if (el.tagName === 'INPUT') {
+                if (el.type === 'submit' || el.type === 'button') {
+                    el.value = translations[lang][key];
+                } else if (el.placeholder !== undefined) {
+                    el.placeholder = translations[lang][key];
+                }
+            } else if (el.tagName === 'TEXTAREA') {
+                if (el.placeholder !== undefined) {
+                    el.placeholder = translations[lang][key];
+                }
+            } else if (el.tagName === 'OPTION') {
+                el.textContent = translations[lang][key];
+            } else {
+                el.textContent = translations[lang][key];
+            }
+        }
+    });
 }
 
 // Show section and animate
@@ -153,15 +177,16 @@ function showSection(sectionId) {
     document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
     
     const section = document.getElementById(sectionId);
-    section.classList.add('active');
-    
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(50px)';
-    setTimeout(() => {
-        section.style.transition = 'all 0.8s ease-out';
-        section.style.opacity = '1';
-        section.style.transform = 'translateY(0)';
-    }, 100);
+    if (section) {
+        section.classList.add('active');
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(50px)';
+        setTimeout(() => {
+            section.style.transition = 'all 0.8s ease-out';
+            section.style.opacity = '1';
+            section.style.transform = 'translateY(0)';
+        }, 100);
+    }
 }
 
 // Form submission handler
@@ -175,7 +200,7 @@ function handleSubmit(event) {
     message += `Course Interest: ${formData.get('course')}\n`;
     message += `Message: ${formData.get('message')}`;
     
-    alert('Thank you for your enquiry! We will contact you soon.');
+    alert(translations[currentLang]['submit-success'] || 'Thank you for your enquiry! We will contact you soon.');
     event.target.reset();
 }
 
@@ -189,8 +214,12 @@ function openWhatsApp() {
 
 // Initialize page on load
 document.addEventListener('DOMContentLoaded', () => {
-    document.body.setAttribute('data-theme', 'light');
+    document.body.setAttribute('data-theme', currentTheme);
 
+    // Trigger initial language change to apply translations
+    changeLanguage(currentLang);
+
+    // Intersection Observer for animations (optional)
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -227,8 +256,10 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const parallax = document.querySelector('.liquid-bg');
-    const speed = scrolled * 0.5;
-    parallax.style.transform = `translateY(${speed}px)`;
+    if(parallax){
+        const speed = scrolled * 0.5;
+        parallax.style.transform = `translateY(${speed}px)`;
+    }
 });
 
 // Lightbox open/close functions
