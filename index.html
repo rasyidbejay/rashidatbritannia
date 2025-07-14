@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-    <title>Rashid - Britannia LC Consultant</title>
+    <title>Rashid - Britannia Consultant</title>
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body data-theme="light">
@@ -14,11 +14,11 @@
         <nav>
             <div class="logo">Rashid</div>
             <ul class="nav-menu">
-                <li><a href="#" class="nav-link" onclick="showSection('home')" data-lang="nav-home">Home</a></li>
-                <li><a href="#" class="nav-link" onclick="showSection('about')" data-lang="nav-about">About Me</a></li>
-                <li><a href="#" class="nav-link" onclick="showSection('courses')" data-lang="nav-courses">Courses</a></li>
-                <li><a href="#" class="nav-link" onclick="showSection('testimonials')" data-lang="nav-testimonials">Testimonials</a></li>
-                <li><a href="#" class="nav-link" onclick="showSection('contact')" data-lang="nav-contact">Contact</a></li>
+                <li><a href="#" class="nav-link" onclick="showSection('home')" data-translate-key="nav-home">Home</a></li>
+                <li><a href="#" class="nav-link" onclick="showSection('about')" data-translate-key="nav-about">About Me</a></li>
+                <li><a href="#" class="nav-link" onclick="showSection('courses')" data-translate-key="nav-courses">Courses</a></li>
+                <li><a href="#" class="nav-link" onclick="showSection('testimonials')" data-translate-key="nav-testimonials">Testimonials</a></li>
+                <li><a href="#" class="nav-link" onclick="showSection('contact')" data-translate-key="nav-contact">Contact</a></li>
             </ul>
             <div class="nav-controls">
                 <select class="lang-select" onchange="changeLanguage(this.value)">
@@ -38,31 +38,27 @@
         <section id="home" class="section active">
             <div class="container">
                 <div class="hero slide-in">
-                    <!-- English -->
+                    <!-- Language blocks: keep data-lang -->
                     <div class="lang-content active" data-lang="en">
                         <h1 class="floating">Welcome to Rashid's Britannia Hub</h1>
                         <p>Your passionate Britannian helping students succeed in their English journey</p>
                         <a href="#" class="cta-button" onclick="showSection('contact')">Start Your English Journey</a>
                     </div>
-                    <!-- Arabic -->
                     <div class="lang-content" data-lang="ar">
                         <h1 class="floating">مرحباً بكم في مركز راشد البريطاني</h1>
                         <p>البريطاني المتحمس الذي يساعد الطلاب على النجاح في رحلة تعلم الإنجليزية</p>
                         <a href="#" class="cta-button" onclick="showSection('contact')">ابدأ رحلة تعلم الإنجليزية</a>
                     </div>
-                    <!-- Korean -->
                     <div class="lang-content" data-lang="ko">
                         <h1 class="floating">라시드의 브리타니아 허브에 오신 것을 환영합니다</h1>
                         <p>학생들의 영어 학습 여정을 돕는 열정적인 브리타니안</p>
                         <a href="#" class="cta-button" onclick="showSection('contact')">영어 학습 여정 시작하기</a>
                     </div>
-                    <!-- Japanese -->
                     <div class="lang-content" data-lang="ja">
                         <h1 class="floating">ラシードのブリタニアハブへようこそ</h1>
                         <p>学生の英語学習の成功を支援する情熱的なブリタニアン</p>
                         <a href="#" class="cta-button" onclick="showSection('contact')">英語学習の旅を始める</a>
                     </div>
-                    <!-- Russian -->
                     <div class="lang-content" data-lang="ru">
                         <h1 class="floating">Добро пожаловать в Britannia Hub Рашида</h1>
                         <p>Ваш страстный британец, помогающий студентам добиться успеха в изучении английского языка</p>
@@ -73,24 +69,24 @@
                 <div class="cards-grid">
                     <div class="card glass-morphism floating">
                         <div class="card-icon">🎓</div>
-                        <h3 data-lang="excellence-title">Excellence</h3>
-                        <p data-lang="excellence-text">Top-quality English education with proven results</p>
+                        <h3 data-translate-key="excellence-title">Excellence</h3>
+                        <p data-translate-key="excellence-text">Top-quality English education with proven results</p>
                     </div>
                     <div class="card glass-morphism floating" style="animation-delay: 0.2s;">
                         <div class="card-icon">👥</div>
-                        <h3 data-lang="community-title">Community</h3>
-                        <p data-lang="community-text">Join a supportive learning community</p>
+                        <h3 data-translate-key="community-title">Community</h3>
+                        <p data-translate-key="community-text">Join a supportive learning community</p>
                     </div>
                     <div class="card glass-morphism floating" style="animation-delay: 0.4s;">
                         <div class="card-icon">🚀</div>
-                        <h3 data-lang="growth-title">Growth</h3>
-                        <p data-lang="growth-text">Accelerate your English proficiency</p>
+                        <h3 data-translate-key="growth-title">Growth</h3>
+                        <p data-translate-key="growth-text">Accelerate your English proficiency</p>
                     </div>
                 </div>
 
                 <!-- Gallery Section -->
                 <div class="gallery-section" style="margin-top: 100px;">
-                    <h2 style="text-align: center; font-size: 3rem; color: var(--primary-blue); margin-bottom: 50px;" data-lang="gallery-title">Our Learning Environment</h2>
+                    <h2 style="text-align: center; font-size: 3rem; color: var(--primary-blue); margin-bottom: 50px;" data-translate-key="gallery-title">Our Learning Environment</h2>
                     <div class="gallery-grid">
                         <!-- Main Video -->
                         <div class="gallery-item main-video glass-morphism" onclick="openLightbox('video', 'assets/welcome.mp4')">
@@ -98,8 +94,8 @@
                                 <source src="assets/welcome.mp4" type="video/mp4" />
                             </video>
                             <div class="video-overlay">
-                                <h3 data-lang="video-title">Welcome to Britannia</h3>
-                                <p data-lang="video-desc">See our amazing learning environment</p>
+                                <h3 data-translate-key="video-title">Welcome to Britannia</h3>
+                                <p data-translate-key="video-desc">See our amazing learning environment</p>
                             </div>
                         </div>
                         
@@ -107,25 +103,25 @@
                         <div class="gallery-item image-1 glass-morphism" onclick="openLightbox('img', 'assets/classroom.jpg')">
                             <img src="assets/classroom.jpg" alt="Modern Facilities" style="width:100%; height:100%; object-fit:cover; border-radius:15px;" />
                             <div class="image-overlay">
-                                <h4 data-lang="facility-title">Modern Facilities</h4>
+                                <h4 data-translate-key="facility-title">Modern Facilities</h4>
                             </div>
                         </div>
                         <div class="gallery-item image-2 glass-morphism" onclick="openLightbox('img', 'assets/teachers.jpg')">
                             <img src="assets/teachers.jpg" alt="Expert Teachers" style="width:100%; height:100%; object-fit:cover; border-radius:15px;" />
                             <div class="image-overlay">
-                                <h4 data-lang="teachers-title">Expert Teachers</h4>
+                                <h4 data-translate-key="teachers-title">Expert Teachers</h4>
                             </div>
                         </div>
                         <div class="gallery-item image-3 glass-morphism" onclick="openLightbox('img', 'assets/students.png')">
                             <img src="assets/students.png" alt="Happy Students" style="width:100%; height:100%; object-fit:cover; border-radius:15px;" />
                             <div class="image-overlay">
-                                <h4 data-lang="students-title">Happy Students</h4>
+                                <h4 data-translate-key="students-title">Happy Students</h4>
                             </div>
                         </div>
                         <div class="gallery-item image-4 glass-morphism" onclick="openLightbox('img', 'assets/success.jpg')">
                             <img src="assets/success.jpg" alt="Success Stories" style="width:100%; height:100%; object-fit:cover; border-radius:15px;" />
                             <div class="image-overlay">
-                                <h4 data-lang="success-title">Success Stories</h4>
+                                <h4 data-translate-key="success-title">Success Stories</h4>
                             </div>
                         </div>
                         <div class="gallery-item video-2 glass-morphism" onclick="openLightbox('video', 'assets/testimonials.mp4')">
@@ -133,19 +129,19 @@
                                 <source src="assets/testimonials.mp4" type="video/mp4" />
                             </video>
                             <div class="video-overlay">
-                                <h4 data-lang="testimonial-video">Student Testimonials</h4>
+                                <h4 data-translate-key="testimonial-video">Student Testimonials</h4>
                             </div>
                         </div>
                         <div class="gallery-item image-5 glass-morphism" onclick="openLightbox('img', 'assets/resources.jpg')">
                             <img src="assets/resources.jpg" alt="Learning Resources" style="width:100%; height:100%; object-fit:cover; border-radius:15px;" />
                             <div class="image-overlay">
-                                <h4 data-lang="resources-title">Learning Resources</h4>
+                                <h4 data-translate-key="resources-title">Learning Resources</h4>
                             </div>
                         </div>
                         <div class="gallery-item image-6 glass-morphism" onclick="openLightbox('img', 'assets/achievements.jpg')">
                             <img src="assets/achievements.jpg" alt="Achievements" style="width:100%; height:100%; object-fit:cover; border-radius:15px;" />
                             <div class="image-overlay">
-                                <h4 data-lang="achievements-title">Achievements</h4>
+                                <h4 data-translate-key="achievements-title">Achievements</h4>
                             </div>
                         </div>
                     </div>
@@ -186,27 +182,27 @@
         <!-- Courses Section -->
         <section id="courses" class="section">
             <div class="container">
-                <h2 style="text-align: center; font-size: 3rem; color: var(--primary-blue); margin-bottom: 50px;" data-lang="courses-title">Our Courses</h2>
+                <h2 style="text-align: center; font-size: 3rem; color: var(--primary-blue); margin-bottom: 50px;" data-translate-key="courses-title">Our Courses</h2>
                 <div class="cards-grid">
                     <div class="card glass-morphism">
                         <div class="card-icon">📚</div>
-                        <h3 data-lang="general-english">General English</h3>
-                        <p data-lang="general-english-desc">Build strong foundations in speaking, listening, reading, and writing</p>
+                        <h3 data-translate-key="general-english">General English</h3>
+                        <p data-translate-key="general-english-desc">Build strong foundations in speaking, listening, reading, and writing</p>
                     </div>
                     <div class="card glass-morphism">
                         <div class="card-icon">⚡</div>
-                        <h3 data-lang="intensive-english">Intensive English</h3>
-                        <p data-lang="intensive-english-desc">Fast-track your English skills with intensive study programs</p>
+                        <h3 data-translate-key="intensive-english">Intensive English</h3>
+                        <p data-translate-key="intensive-english-desc">Fast-track your English skills with intensive study programs</p>
                     </div>
                     <div class="card glass-morphism">
                         <div class="card-icon">🎯</div>
-                        <h3 data-lang="ielts-prep">IELTS Preparation</h3>
-                        <p data-lang="ielts-prep-desc">Achieve your target IELTS score with expert guidance</p>
+                        <h3 data-translate-key="ielts-prep">IELTS Preparation</h3>
+                        <p data-translate-key="ielts-prep-desc">Achieve your target IELTS score with expert guidance</p>
                     </div>
                     <div class="card glass-morphism">
                         <div class="card-icon">☀️</div>
-                        <h3 data-lang="summer-programs">Summer Programs</h3>
-                        <p data-lang="summer-programs-desc">Special summer courses for accelerated learning</p>
+                        <h3 data-translate-key="summer-programs">Summer Programs</h3>
+                        <p data-translate-key="summer-programs-desc">Special summer courses for accelerated learning</p>
                     </div>
                 </div>
             </div>
@@ -215,20 +211,20 @@
         <!-- Testimonials Section -->
         <section id="testimonials" class="section">
             <div class="container">
-                <h2 style="text-align: center; font-size: 3rem; color: var(--primary-blue); margin-bottom: 50px;" data-lang="testimonials-title">What Students Say</h2>
+                <h2 style="text-align: center; font-size: 3rem; color: var(--primary-blue); margin-bottom: 50px;" data-translate-key="testimonials-title">What Students Say</h2>
                 
                 <div class="testimonial glass-morphism">
-                    <p data-lang="testimonial1">"Rashid and the Britannia team helped me achieve my IELTS goal of 7.5! The teaching method is excellent and the environment is so supportive."</p>
+                    <p data-translate-key="testimonial1">"Rashid and the Britannia team helped me achieve my IELTS goal of 7.5! The teaching method is excellent and the environment is so supportive."</p>
                     <div class="testimonial-author">- Sarah Ahmed</div>
                 </div>
                 
                 <div class="testimonial glass-morphism">
-                    <p data-lang="testimonial2">"I improved my English speaking confidence tremendously. Britannia's approach is practical and effective. Highly recommended!"</p>
+                    <p data-translate-key="testimonial2">"I improved my English speaking confidence tremendously. Britannia's approach is practical and effective. Highly recommended!"</p>
                     <div class="testimonial-author">- Mohammed Ali</div>
                 </div>
                 
                 <div class="testimonial glass-morphism">
-                    <p data-lang="testimonial3">"The best language center I've ever been to. Professional teachers, modern facilities, and great results!"</p>
+                    <p data-translate-key="testimonial3">"The best language center I've ever been to. Professional teachers, modern facilities, and great results!"</p>
                     <div class="testimonial-author">- Fatima Hassan</div>
                 </div>
             </div>
@@ -237,39 +233,39 @@
         <!-- Contact Section -->
         <section id="contact" class="section">
             <div class="container">
-                <h2 style="text-align: center; font-size: 3rem; color: var(--primary-blue); margin-bottom: 50px;" data-lang="contact-title">Get Started Today</h2>
+                <h2 style="text-align: center; font-size: 3rem; color: var(--primary-blue); margin-bottom: 50px;" data-translate-key="contact-title">Get Started Today</h2>
                 
                 <div class="contact-form glass-morphism" style="padding: 40px;">
                     <form onsubmit="handleSubmit(event)">
                         <div class="form-group">
-                            <label data-lang="name-label">Full Name</label>
+                            <label data-translate-key="name-label">Full Name</label>
                             <input type="text" name="name" required />
                         </div>
                         <div class="form-group">
-                            <label data-lang="email-label">Email</label>
+                            <label data-translate-key="email-label">Email</label>
                             <input type="email" name="email" required />
                         </div>
                         <div class="form-group">
-                            <label data-lang="phone-label">Phone Number</label>
+                            <label data-translate-key="phone-label">Phone Number</label>
                             <input type="tel" name="phone" required />
                         </div>
                         <div class="form-group">
-                            <label data-lang="course-label">Course Interest</label>
+                            <label data-translate-key="course-label">Course Interest</label>
                             <select name="course" required>
-                                <option value="" data-lang="select-course">Select a course</option>
-                                <option value="general" data-lang="general-english">General English</option>
-                                <option value="intensive" data-lang="intensive-english">Intensive English</option>
-                                <option value="ielts" data-lang="ielts-prep">IELTS Preparation</option>
-                                <option value="summer" data-lang="summer-programs">Summer Programs</option>
+                                <option value="" data-translate-key="select-course">Select a course</option>
+                                <option value="general" data-translate-key="general-english">General English</option>
+                                <option value="intensive" data-translate-key="intensive-english">Intensive English</option>
+                                <option value="ielts" data-translate-key="ielts-prep">IELTS Preparation</option>
+                                <option value="summer" data-translate-key="summer-programs">Summer Programs</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label data-lang="message-label">Message</label>
+                            <label data-translate-key="message-label">Message</label>
                             <textarea name="message" placeholder="Tell us about your English learning goals..."></textarea>
                         </div>
                         <div style="text-align: center;">
-                            <button type="submit" class="cta-button" data-lang="submit-btn">Send Enquiry</button>
-                            <button type="button" class="whatsapp-button" onclick="openWhatsApp()" data-lang="whatsapp-btn">💬 Chat on WhatsApp</button>
+                            <button type="submit" class="cta-button" data-translate-key="submit-btn">Send Enquiry</button>
+                            <button type="button" class="whatsapp-button" onclick="openWhatsApp()" data-translate-key="whatsapp-btn">💬 Chat on WhatsApp</button>
                         </div>
                     </form>
                 </div>
@@ -284,38 +280,38 @@
                 <div class="footer-section">
                     <div class="footer-logo">
                         <h3 style="color: var(--primary-blue); font-size: 2rem; margin-bottom: 15px;">Rashid</h3>
-                        <p style="color: var(--primary-red); font-weight: 600;" data-lang="footer-subtitle">Britannia's Expert</p>
-                        <p style="margin-top: 15px; opacity: 0.8;" data-lang="footer-desc">Empowering students to achieve English excellence at Britannia Language Center</p>
+                        <p style="color: var(--primary-red); font-weight: 600;" data-translate-key="footer-subtitle">Britannia's Expert</p>
+                        <p style="margin-top: 15px; opacity: 0.8;" data-translate-key="footer-desc">Empowering students to achieve English excellence at Britannia Language Center</p>
                     </div>
                 </div>
                 
                 <div class="footer-section">
-                    <h4 data-lang="footer-quick-links">Quick Links</h4>
+                    <h4 data-translate-key="footer-quick-links">Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="#" onclick="showSection(event,'home')" data-lang="nav-home">Home</a></li>
-                        <li><a href="#" onclick="showSection('about')" data-lang="nav-about">About Me</a></li>
-                        <li><a href="#" onclick="showSection('courses')" data-lang="nav-courses">Courses</a></li>
-                        <li><a href="#" onclick="showSection('testimonials')" data-lang="nav-testimonials">Testimonials</a></li>
-                        <li><a href="#" onclick="showSection('contact')" data-lang="nav-contact">Contact</a></li>
+                        <li><a href="#" onclick="showSection(event,'home')" data-translate-key="nav-home">Home</a></li>
+                        <li><a href="#" onclick="showSection('about')" data-translate-key="nav-about">About Me</a></li>
+                        <li><a href="#" onclick="showSection('courses')" data-translate-key="nav-courses">Courses</a></li>
+                        <li><a href="#" onclick="showSection('testimonials')" data-translate-key="nav-testimonials">Testimonials</a></li>
+                        <li><a href="#" onclick="showSection('contact')" data-translate-key="nav-contact">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4 data-lang="footer-courses">Courses</h4>
+                    <h4 data-translate-key="footer-courses">Courses</h4>
                     <ul class="footer-links">
-                        <li><a href="#" onclick="showSection('courses')" data-lang="general-english">General English</a></li>
-                        <li><a href="#" onclick="showSection('courses')" data-lang="intensive-english">Intensive English</a></li>
-                        <li><a href="#" onclick="showSection('courses')" data-lang="ielts-prep">IELTS Preparation</a></li>
-                        <li><a href="#" onclick="showSection('courses')" data-lang="summer-programs">Summer Programs</a></li>
+                        <li><a href="#" onclick="showSection('courses')" data-translate-key="general-english">General English</a></li>
+                        <li><a href="#" onclick="showSection('courses')" data-translate-key="intensive-english">Intensive English</a></li>
+                        <li><a href="#" onclick="showSection('courses')" data-translate-key="ielts-prep">IELTS Preparation</a></li>
+                        <li><a href="#" onclick="showSection('courses')" data-translate-key="summer-programs">Summer Programs</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4 data-lang="footer-contact">Contact Info</h4>
+                    <h4 data-translate-key="footer-contact">Contact Info</h4>
                     <div class="contact-info">
                         <div class="contact-item">
                             <span class="contact-icon">📍</span>
-                            <p data-lang="footer-address">Britannia Language Center<br>6-1, HSBC Bukit Bintang, Menara Genesis, 33, Jln Sultan Ismail, Bukit Bintang, 50250 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia</p>
+                            <p data-translate-key="footer-address">Britannia Language Center<br>6-1, HSBC Bukit Bintang, Menara Genesis, 33, Jln Sultan Ismail, Bukit Bintang, 50250 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia</p>
                         </div>
                         <div class="contact-item">
                             <span class="contact-icon">📞</span>
@@ -327,13 +323,13 @@
                         </div>
                         <div class="contact-item">
                             <span class="contact-icon">💬</span>
-                            <button class="footer-whatsapp" onclick="openWhatsApp()" data-lang="whatsapp-btn">Chat on WhatsApp</button>
+                            <button class="footer-whatsapp" onclick="openWhatsApp()" data-translate-key="whatsapp-btn">Chat on WhatsApp</button>
                         </div>
                     </div>
                 </div>
                 
                 <div class="footer-section social-section">
-                    <h4 data-lang="footer-social">Follow Us</h4>
+                    <h4 data-translate-key="footer-social">Follow Us</h4>
                     <div class="social-links">
                         <a href="#" class="social-link" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-link" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -344,10 +340,10 @@
                 </div>
 
                 <div class="newsletter-signup" style="margin-top: 30px;">
-                    <h5 data-lang="newsletter-title">Stay Updated</h5>
+                    <h5 data-translate-key="newsletter-title">Stay Updated</h5>
                     <div class="newsletter-form">
-                        <input type="email" placeholder="Enter your email" class="newsletter-input" data-lang="newsletter-placeholder" />
-                        <button class="newsletter-btn" data-lang="newsletter-btn">Subscribe</button>
+                        <input type="email" placeholder="Enter your email" class="newsletter-input" data-translate-key="newsletter-placeholder" />
+                        <button class="newsletter-btn" data-translate-key="newsletter-btn">Subscribe</button>
                     </div>
                 </div>
             </div>
@@ -355,11 +351,11 @@
             <div class="footer-bottom">
                 <div class="footer-divider"></div>
                 <div class="footer-bottom-content">
-                    <p data-lang="footer-copyright">&copy; 2025 Rashid - Britannia's Expert. All rights reserved.</p>
+                    <p data-translate-key="footer-copyright">&copy; 2025 Rashid - Britannia's Expert. All rights reserved.</p>
                     <div class="footer-bottom-links">
-                        <a href="#" data-lang="footer-privacy">Privacy Policy</a>
-                        <a href="#" data-lang="footer-terms">Terms of Service</a>
-                        <a href="#" data-lang="footer-cookies">Cookie Policy</a>
+                        <a href="#" data-translate-key="footer-privacy">Privacy Policy</a>
+                        <a href="#" data-translate-key="footer-terms">Terms of Service</a>
+                        <a href="#" data-translate-key="footer-cookies">Cookie Policy</a>
                     </div>
                 </div>
             </div>
